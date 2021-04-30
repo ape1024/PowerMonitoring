@@ -15,7 +15,7 @@
 import UserLogin from '../components/UserLogin/UserLogin.vue';
 
 export default {
-  name: '',
+  name: 'Login',
   data() {
     return {
       title: ''
@@ -62,8 +62,8 @@ export default {
       background-color #FDFFFF
       opacity 0.85
       position absolute
-      top 45%
+      top 40%
       left 60%
-      margin-top -155px
+      margin-top -125px
       border-radius 3px
 </style>

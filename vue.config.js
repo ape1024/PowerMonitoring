@@ -15,4 +15,5 @@ module.exports = {
   // enabled by default if the machine has more than 1 cores
   // eslint-disable-next-line global-require
   parallel: require('os').cpus().length > 1
+  // devtool: 'inline-source-map'
 };

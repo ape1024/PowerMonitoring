@@ -4,12 +4,14 @@ $font-size-Base = 14px
 $font-size-Medium = 16px
 $font-size-large = 18px
 $font-size-ExtraLarge = 20px
+$font-size-Title = 32px
 $font-size-superLarge = 40px
 
 // 字体颜色
 $font-color-main = #303133
 $font-color-routine = #606266
 $font-color-secondary = #909399
+$font-color-white = #fff
 $font-color-Brand = #409EFF
 $font-color-Success = #67C23A
 $font-color-Warning = #E6A23C
@@ -21,3 +23,29 @@ $border-color-one = #DCDFE6
 $border-color-two = #E4E7ED
 $border-color-three = #EBEEF5
 $border-color-four = #F2F6FC
+
+//  背景
+$background-color-Brand = #409EFF
+$background-color-Success = #67C23A
+$background-color-Warning = #E6A23C
+$background-color-Danger = #F56C6C
+$background-color-Info = #909399
+$background-color-FFF = #fff
+
+//  层级
+$z-index-Small = 1
+$z-index-Base = 10
+$z-index-Medium = 100
+$z-index-large = 10000
+$z-index-superLarge = 100000
+
+//  遮盖层
+coverLayer()
+  position fixed
+  top 0
+  left 0
+  width 100%
+  height 100%
+  background: rgba(000, 000, 000, .2)
+  overflow hidden
+  z-index $z-index-superLarge

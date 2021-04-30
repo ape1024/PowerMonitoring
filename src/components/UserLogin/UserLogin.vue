@@ -28,7 +28,7 @@
 
 <script>
 export default {
-  name: '',
+  name: 'UserLogin',
   data() {
     return {
       title: '',
@@ -43,6 +43,7 @@ export default {
     signIn() {
       console.log(this.userName)
       console.log(this.userPassword)
+      this.$router.push('homePage')
     }
   },
   created() {
