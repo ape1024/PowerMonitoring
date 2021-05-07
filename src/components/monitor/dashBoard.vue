@@ -1,7 +1,9 @@
 <template>
-  <div class>
-    <div id="dashBoard" :style="{width: '100%', height: '300px'}"></div>
-  </div>
+  <el-row>
+    <el-col :span="24">
+      <div id="dashBoard" :style="{width: '100%', height: '300px'}"></div>
+    </el-col>
+  </el-row>
 </template>
 
 <script>

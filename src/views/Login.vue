@@ -1,14 +1,16 @@
 <template>
-  <div class="login">
-    <el-container>
-      <el-header class="loginHeader">{{ title }}</el-header>
-      <el-main class="loginMain">
-        <div class="UserLogin">
-          <UserLogin />
-        </div>
-      </el-main>
-    </el-container>
-  </div>
+  <el-row class="login">
+    <el-col :span="24">
+      <el-container>
+        <el-header class="loginHeader">{{ title }}</el-header>
+        <el-main class="loginMain">
+          <div class="UserLogin">
+            <UserLogin />
+          </div>
+        </el-main>
+      </el-container>
+    </el-col>
+  </el-row>
 </template>
 
 <script>

@@ -1,30 +1,32 @@
 <template>
-  <div class="instrument">
-    <!-- 仪表盘 -->
-    <h4 class="instrumentHeader">表盘数据</h4>
-    <div class="instrumentSubject">
-      <el-row :gutter="20">
-        <el-col :span="8">
-          <div class="grid-content bg-purple">
-            <dashBoard />
-          </div>
-        </el-col>
-        <el-col :span="8">
-          <div class="grid-content bg-purple">
-            <dashBoard />
-          </div>
-        </el-col>
-        <el-col :span="8">
-          <div class="grid-content bg-purple">
-            <dashBoard />
-          </div>
-        </el-col>
-      </el-row>
-    </div>
-    <div class="instrumentBottom">
-      <el-button @click="close" size="medium">退 出</el-button>
-    </div>
-  </div>
+  <el-row class="instrument">
+    <el-col :span="24">
+      <!-- 仪表盘 -->
+      <h4 class="instrumentHeader">表盘数据</h4>
+      <div class="instrumentSubject">
+        <el-row :gutter="20">
+          <el-col :span="8">
+            <div class="grid-content bg-purple">
+              <dashBoard />
+            </div>
+          </el-col>
+          <el-col :span="8">
+            <div class="grid-content bg-purple">
+              <dashBoard />
+            </div>
+          </el-col>
+          <el-col :span="8">
+            <div class="grid-content bg-purple">
+              <dashBoard />
+            </div>
+          </el-col>
+        </el-row>
+      </div>
+      <div class="instrumentBottom">
+        <el-button @click="close" size="medium">退 出</el-button>
+      </div>
+    </el-col>
+  </el-row>
 </template>
 
 <script>

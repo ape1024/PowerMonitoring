@@ -1,10 +1,13 @@
 <template>
-  <div class="Breadcrumb">
-    <el-breadcrumb separator-class="el-icon-arrow-right">
-      <el-breadcrumb-item>首页</el-breadcrumb-item>
-      <el-breadcrumb-item>活动管理</el-breadcrumb-item>
-    </el-breadcrumb>
-  </div>
+  <el-row class="Breadcrumb">
+    <el-col :span="24">
+      <!-- 页头 -->
+      <el-breadcrumb separator-class="el-icon-arrow-right">
+        <el-breadcrumb-item>首页</el-breadcrumb-item>
+        <el-breadcrumb-item>活动管理</el-breadcrumb-item>
+      </el-breadcrumb>
+    </el-col>
+  </el-row>
 </template>
 
 <script>

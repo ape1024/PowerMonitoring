@@ -1,54 +1,56 @@
 <template>
-  <div class="histogram">
-    <!-- 页头 -->
-    <div class="histogramHead">{{title}}</div>
-    <!-- 选项卡 -->
-    <div class="TabControl">
-      <el-tabs v-model="activeName" @tab-click="handleClick">
-        <el-tab-pane label="北工大软件园A区配" name="first"></el-tab-pane>
-        <el-tab-pane label="北工大软件园B区配" name="second"></el-tab-pane>
-        <el-tab-pane label="北工大软件园C区配" name="third"></el-tab-pane>
-      </el-tabs>
-    </div>
-    <!-- echarts -->
-    <el-row :gutter="20" class="histogramContent">
-      <el-col :span="20">
-        <div class="grid-content bg-purple">
-          <div id="electricity" :style="{width: '100%', height: '300px'}"></div>
-        </div>
-      </el-col>
-      <el-col :span="4">
-        <div class="grid-content bg-purple">
-          <div class="numericalDisplay_top">
-            <h4 class="numericalDisplay_tit">截止昨日本月累计电量</h4>
-            <div class="numericalDisplay_value">
-              <i class="el-icon-s-data numericalDisplay_icon"></i>
-              <div class="numericalDisplay_value_text">1231313</div>
-              <div class="numericalDisplay_value_unit">kW</div>
+  <el-row class="histogram">
+    <el-col :span="24">
+      <!-- 页头 -->
+      <div class="histogramHead">{{title}}</div>
+      <!-- 选项卡 -->
+      <div class="TabControl">
+        <el-tabs v-model="activeName" @tab-click="handleClick">
+          <el-tab-pane label="北工大软件园A区配" name="first"></el-tab-pane>
+          <el-tab-pane label="北工大软件园B区配" name="second"></el-tab-pane>
+          <el-tab-pane label="北工大软件园C区配" name="third"></el-tab-pane>
+        </el-tabs>
+      </div>
+      <!-- echarts -->
+      <el-row :gutter="20" class="histogramContent">
+        <el-col :span="20">
+          <div class="grid-content bg-purple">
+            <div id="electricity" :style="{width: '100%', height: '300px'}"></div>
+          </div>
+        </el-col>
+        <el-col :span="4">
+          <div class="grid-content bg-purple">
+            <div class="numericalDisplay_top">
+              <h4 class="numericalDisplay_tit">截止昨日本月累计电量</h4>
+              <div class="numericalDisplay_value">
+                <i class="el-icon-s-data numericalDisplay_icon"></i>
+                <div class="numericalDisplay_value_text">1231313</div>
+                <div class="numericalDisplay_value_unit">kW</div>
+              </div>
+              <div class="numericalDisplay_value">
+                <i class="el-icon-alarm-clock numericalDisplay_icon"></i>
+                <div class="numericalDisplay_value_textTwo">12 : 00</div>
+                <!-- <div class="numericalDisplay_value_unit"></div> -->
+              </div>
             </div>
-            <div class="numericalDisplay_value">
-              <i class="el-icon-alarm-clock numericalDisplay_icon"></i>
-              <div class="numericalDisplay_value_textTwo">12 : 00</div>
-              <!-- <div class="numericalDisplay_value_unit"></div> -->
+            <div class="numericalDisplay_bottom">
+              <h4 class="numericalDisplay_tit">与去年同期对比</h4>
+              <div class="numericalDisplay_value">
+                <i class="el-icon-s-data numericalDisplay_icon"></i>
+                <div class="numericalDisplay_value_text">1231313</div>
+                <div class="numericalDisplay_value_unit">kW</div>
+              </div>
+              <div class="numericalDisplay_value">
+                <i class="el-icon-alarm-clock numericalDisplay_icon"></i>
+                <div class="numericalDisplay_value_textTwo">12 : 00</div>
+                <!-- <div class="numericalDisplay_value_unit"></div> -->
+              </div>
             </div>
           </div>
-          <div class="numericalDisplay_bottom">
-            <h4 class="numericalDisplay_tit">与去年同期对比</h4>
-            <div class="numericalDisplay_value">
-              <i class="el-icon-s-data numericalDisplay_icon"></i>
-              <div class="numericalDisplay_value_text">1231313</div>
-              <div class="numericalDisplay_value_unit">kW</div>
-            </div>
-            <div class="numericalDisplay_value">
-              <i class="el-icon-alarm-clock numericalDisplay_icon"></i>
-              <div class="numericalDisplay_value_textTwo">12 : 00</div>
-              <!-- <div class="numericalDisplay_value_unit"></div> -->
-            </div>
-          </div>
-        </div>
-      </el-col>
-    </el-row>
-  </div>
+        </el-col>
+      </el-row>
+    </el-col>
+  </el-row>
 </template>
 
 <script>

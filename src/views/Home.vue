@@ -1,19 +1,22 @@
 <template>
-  <div class="home">
-    <el-container>
-      <el-header class="homeHeader">
-        <Navigation />
-      </el-header>
-      <el-container class="homeContainer">
-        <el-aside width="200px">
-          <NavMenu />
-        </el-aside>
-        <el-main>
-          <router-view />
-        </el-main>
+  <el-row class="home">
+    <!-- 主页 -->
+    <el-col :span="24">
+      <el-container>
+        <el-header class="homeHeader">
+          <Navigation />
+        </el-header>
+        <el-container class="homeContainer">
+          <el-aside width="200px">
+            <NavMenu />
+          </el-aside>
+          <el-main>
+            <router-view />
+          </el-main>
+        </el-container>
       </el-container>
-    </el-container>
-  </div>
+    </el-col>
+  </el-row>
 </template>
 
 <script>

@@ -1,38 +1,41 @@
 <template>
-  <div class>
-    <!-- 页卡 -->
-    <Breadcrumb />
-    <!-- 基础信息 -->
-    <el-row :gutter="20" class="InformationSubject">
-      <el-col :span="6">
-        <div class="grid-content bg-purple InformationBox">
-          <exhibiting />
-        </div>
-      </el-col>
-      <el-col :span="6">
-        <div class="grid-content bg-purple InformationBox">
-          <exhibiting />
-        </div>
-      </el-col>
-      <el-col :span="6">
-        <div class="grid-content bg-purple InformationBox">
-          <exhibiting />
-        </div>
-      </el-col>
-      <el-col :span="6">
-        <div class="grid-content bg-purple InformationBox">
-          <exhibiting />
-        </div>
-      </el-col>
-    </el-row>
-    <!-- 日负荷情况 -->
-    <div class="loadCondition">
-      <overburden />
-    </div>
-    <div class="loadCondition">
-      <electricity />
-    </div>
-  </div>
+  <el-row>
+    <!-- 首页 -->
+    <el-col :span="24">
+      <!-- 页卡 -->
+      <Breadcrumb />
+      <!-- 基础信息 -->
+      <el-row :gutter="20" class="InformationSubject">
+        <el-col :span="6">
+          <div class="grid-content bg-purple InformationBox">
+            <exhibiting />
+          </div>
+        </el-col>
+        <el-col :span="6">
+          <div class="grid-content bg-purple InformationBox">
+            <exhibiting />
+          </div>
+        </el-col>
+        <el-col :span="6">
+          <div class="grid-content bg-purple InformationBox">
+            <exhibiting />
+          </div>
+        </el-col>
+        <el-col :span="6">
+          <div class="grid-content bg-purple InformationBox">
+            <exhibiting />
+          </div>
+        </el-col>
+      </el-row>
+      <!-- 日负荷情况 -->
+      <div class="loadCondition">
+        <overburden />
+      </div>
+      <div class="loadCondition">
+        <electricity />
+      </div>
+    </el-col>
+  </el-row>
 </template>
 
 <script>
@@ -42,7 +45,7 @@ import overburden from '../components/homePage/overburden.vue'
 import electricity from '../components/homePage/electricity.vue'
 
 export default {
-  name: 'homePage',
+  name: 'HomePage',
   components: {
     Breadcrumb,
     exhibiting,

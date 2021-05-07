@@ -1,23 +1,25 @@
 <template>
-  <div class="Navigation">
-    <div class="navTitle">{{title}}</div>
-    <div class="signOut">
-      <el-dropdown>
-        <span class="el-dropdown-link">
-          北工大
-          <i class="el-icon-arrow-down el-icon--right"></i>
-        </span>
-        <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item>退出</el-dropdown-item>
-        </el-dropdown-menu>
-      </el-dropdown>
-    </div>
-    <div class="information">
-      <el-badge :value="tidings" class="item">
-        <i class="el-icon-bell"></i>
-      </el-badge>
-    </div>
-  </div>
+  <el-row>
+    <el-col :span="24" class="Navigation">
+      <div class="navTitle">{{title}}</div>
+      <div class="signOut">
+        <el-dropdown>
+          <span class="el-dropdown-link">
+            北工大
+            <i class="el-icon-arrow-down el-icon--right"></i>
+          </span>
+          <el-dropdown-menu slot="dropdown">
+            <el-dropdown-item>退出</el-dropdown-item>
+          </el-dropdown-menu>
+        </el-dropdown>
+      </div>
+      <div class="information">
+        <el-badge :value="tidings" class="item">
+          <i class="el-icon-bell"></i>
+        </el-badge>
+      </div>
+    </el-col>
+  </el-row>
 </template>
 
 <script>

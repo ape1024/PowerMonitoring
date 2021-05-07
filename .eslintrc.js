@@ -59,6 +59,7 @@ module.exports = {
     "max-depth": ["error", 4], // 强制可嵌套的块的最大深度
     "max-nested-callbacks": ["error", 3], // 强制回调函数最大嵌套深度
     "max-params": ["error", 6], // 强制函数定义中最多允许的参数数量
-    "linebreak-style": ["off", "windows"]
+    "linebreak-style": ["off", "windows"],
+    'max-len': ["error", { code: 300 }]
   },
 };

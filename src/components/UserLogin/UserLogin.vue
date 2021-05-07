@@ -1,29 +1,31 @@
 <template>
-  <div class="UserInput">
-    <h4 class="userTitle">{{title}}</h4>
-    <div class="userName">
-      <el-input
-        prefix-icon="iconfont el-icon-user"
-        v-model="userName"
-        placeholder="请输入用户名"
-        clearable
-      ></el-input>
-    </div>
-    <div class="userPassword">
-      <el-input
-        prefix-icon="iconfont el-icon-lock"
-        placeholder="请输入密码"
-        v-model="userPassword"
-        show-password
-      ></el-input>
-    </div>
-    <div class="signIn">
-      <el-button @click="signIn" type="primary">登 录</el-button>
-    </div>
-    <div class="remember">
-      <el-checkbox v-model="checked">记住我</el-checkbox>
-    </div>
-  </div>
+  <el-row>
+    <el-col :span="24" class="UserInput">
+      <h4 class="userTitle">{{title}}</h4>
+      <div class="userName">
+        <el-input
+          prefix-icon="iconfont el-icon-user"
+          v-model="userName"
+          placeholder="请输入用户名"
+          clearable
+        ></el-input>
+      </div>
+      <div class="userPassword">
+        <el-input
+          prefix-icon="iconfont el-icon-lock"
+          placeholder="请输入密码"
+          v-model="userPassword"
+          show-password
+        ></el-input>
+      </div>
+      <div class="signIn">
+        <el-button @click="signIn" type="primary">登 录</el-button>
+      </div>
+      <div class="remember">
+        <el-checkbox v-model="checked">记住我</el-checkbox>
+      </div>
+    </el-col>
+  </el-row>
 </template>
 
 <script>
@@ -43,7 +45,7 @@ export default {
     signIn() {
       console.log(this.userName)
       console.log(this.userPassword)
-      this.$router.push('homePage')
+      this.$router.push('HomePage')
     }
   },
   created() {

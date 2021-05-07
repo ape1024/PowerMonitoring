@@ -1,0 +1,86 @@
+<template>
+  <el-row class="pieChart">
+    <el-col :span="24">
+      <!-- 饼状图 -->
+      <div id="pieChart" :style="{width: '100%', height: '280px'}"></div>
+    </el-col>
+  </el-row>
+</template>
+
+<script>
+export default {
+  name: 'pieChart',
+  components: {},
+  data() {
+    return {};
+  },
+  computed: {},
+  watch: {},
+  mounted() {
+    this.drawLine()
+  },
+  methods: {
+    drawLine() {
+      const myChart = this.$echarts.init(document.getElementById('pieChart'))
+      myChart.setOption({
+        title: {
+          subtext: '单位:  kWh',
+          subtextStyle: {
+            fontSize: 20
+          },
+          left: 'center'
+        },
+        tooltip: {
+          trigger: 'item'
+        },
+        color: ['red', 'blue', 'yellow', 'pink'],
+        legend: {
+          orient: 'vertical',
+          left: 'left'
+        },
+        series: [
+          {
+            name: '访问来源',
+            type: 'pie',
+            radius: '65%',
+            label: {
+              normal: {
+                show: true,
+                textStyle: {
+                  fontWeight: 300,
+                  fontSize: 14
+                },
+                formatter: '{a}: {c} ({d}%)'
+
+              }
+            },
+            data: [
+              {
+                value: 1048,
+                name: '搜索引擎',
+                label: { color: 'red' }
+              },
+              { value: 735, name: '直接访问', label: { color: 'blue' } },
+              { value: 580, name: '邮件营销', label: { color: 'yellow' } },
+              { value: 484, name: '联盟广告', label: { color: 'pink' } }
+            ],
+            emphasis: {
+              itemStyle: {
+                shadowBlur: 10,
+                shadowOffsetX: 0,
+                shadowColor: 'rgba(0, 0, 0, 0.5)'
+              }
+            }
+          }
+        ]
+      })
+    }
+  },
+  created() { }
+};
+</script>
+
+<style scoped lang='stylus'>
+.pieChart
+  padding 20px 0
+</style>

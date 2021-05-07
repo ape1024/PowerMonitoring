@@ -1,31 +1,33 @@
 <template>
-  <div class="exhibiting">
-    <div class="exhibitingTitle" :style="{background: color}">
-      <i :class="icon"></i>
-      {{title}}
-    </div>
-    <div class="exhibitingContent">
-      <div class="exhibiting_left">总容量</div>
-      <div class="exhibiting_right">
-        <div class="exhibiting_number">10400</div>
-        <div class="exhibiting_unit">kVA</div>
+  <el-row>
+    <el-col :span="24" class="exhibiting">
+      <div class="exhibitingTitle" :style="{background: color}">
+        <i :class="icon"></i>
+        {{title}}
       </div>
-    </div>
-    <div class="exhibitingContent">
-      <div class="exhibiting_left">总容量</div>
-      <div class="exhibiting_right">
-        <div class="exhibiting_number">10400</div>
-        <div class="exhibiting_unit">kVA</div>
+      <div class="exhibitingContent">
+        <div class="exhibiting_left">总容量</div>
+        <div class="exhibiting_right">
+          <div class="exhibiting_number">10400</div>
+          <div class="exhibiting_unit">kVA</div>
+        </div>
       </div>
-    </div>
-    <div class="exhibitingContent">
-      <div class="exhibiting_left">总容量</div>
-      <div class="exhibiting_right">
-        <div class="exhibiting_number">10400</div>
-        <div class="exhibiting_unit">kVA</div>
+      <div class="exhibitingContent">
+        <div class="exhibiting_left">总容量</div>
+        <div class="exhibiting_right">
+          <div class="exhibiting_number">10400</div>
+          <div class="exhibiting_unit">kVA</div>
+        </div>
       </div>
-    </div>
-  </div>
+      <div class="exhibitingContent">
+        <div class="exhibiting_left">总容量</div>
+        <div class="exhibiting_right">
+          <div class="exhibiting_number">10400</div>
+          <div class="exhibiting_unit">kVA</div>
+        </div>
+      </div>
+    </el-col>
+  </el-row>
 </template>
 
 <script>

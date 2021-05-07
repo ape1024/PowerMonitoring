@@ -1,15 +1,18 @@
 <template>
-  <div class>
-    <Breadcrumb />
-    <div class="TabControl">
-      <TabControl />
-    </div>
-    <div class="TabControlTwo">
-      <TabControl />
-    </div>
-    <!-- 主体内容 -->
-    <monitorSubject />
-  </div>
+  <el-row>
+    <el-col :span="24">
+      <!-- 运行监视 -> 回路数据 -->
+      <Breadcrumb />
+      <div class="TabControl">
+        <TabControl />
+      </div>
+      <div class="TabControlTwo">
+        <TabControl />
+      </div>
+      <!-- 主体内容 -->
+      <monitorSubject />
+    </el-col>
+  </el-row>
 </template>
 
 <script>
