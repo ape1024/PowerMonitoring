@@ -1,6 +1,6 @@
 <template>
   <el-row>
-    <!-- 首页 -->
+    <!-- 首  页 -->
     <el-col :span="24">
       <!-- 页卡 -->
       <Breadcrumb />
