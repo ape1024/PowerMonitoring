@@ -20,8 +20,8 @@
 </template>
 
 <script>
-import Navigation from '../components/Home/Navigation.vue'
-import NavMenu from '../components/Home/NavMenu.vue'
+import Navigation from '../components/home/Navigation.vue'
+import NavMenu from '../components/home/NavMenu.vue'
 
 export default {
   name: 'Home',

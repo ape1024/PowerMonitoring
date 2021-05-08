@@ -20,12 +20,12 @@
             <span>运行监视</span>
           </template>
           <el-menu-item-group>
-            <el-menu-item index="mainWiring">主接线图监视</el-menu-item>
-            <el-menu-item index="monitor">回路数据监视</el-menu-item>
-            <el-menu-item index="2-4">在线表计监视</el-menu-item>
-            <el-menu-item index="2-5">配电设备监视</el-menu-item>
-            <el-menu-item index="2-6">表计数据监视</el-menu-item>
-            <el-menu-item index="2-7">运行数据监视</el-menu-item>
+            <el-menu-item index="MainWiring">主接线图监视</el-menu-item>
+            <el-menu-item index="Monitor">回路数据监视</el-menu-item>
+            <el-menu-item index="OnlineMeter">在线表计监视</el-menu-item>
+            <el-menu-item index="ControllerSwitching">配电设备监视</el-menu-item>
+            <el-menu-item index="MeterData">表计数据监视</el-menu-item>
+            <el-menu-item index="OperatingData">运行数据监视</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
         <el-submenu index="3">
@@ -34,7 +34,7 @@
             <span>报警管理</span>
           </template>
           <el-menu-item-group>
-            <el-menu-item index="3-1">报警事件查询</el-menu-item>
+            <el-menu-item index="AlarmEvents">报警事件查询</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
         <el-submenu index="4">

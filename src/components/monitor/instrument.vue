@@ -23,7 +23,7 @@
         </el-row>
       </div>
       <div class="instrumentBottom">
-        <el-button @click="close" size="medium">退 出</el-button>
+        <el-button @click="close" "medium">退 出</el-button>
       </div>
     </el-col>
   </el-row>

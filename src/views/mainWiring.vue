@@ -14,7 +14,7 @@ import Breadcrumb from '../components/public/Breadcrumb.vue'
 import TabControl from '../components/mainWiring/TabControl.vue'
 
 export default {
-  name: 'mainWiring',
+  name: 'MainWiring',
   components: {
     Breadcrumb,
     TabControl

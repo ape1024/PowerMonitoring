@@ -31,15 +31,45 @@ const routes = [
       },
       {
         // 运行监视 -> 回路数据
-        path: '/monitor',
-        name: 'monitor',
-        component: () => import('@/views/monitor')
+        path: '/Monitor',
+        name: 'Monitor',
+        component: () => import('@/views/Monitor')
       },
       {
         // 运行监视 -> 主接线图
-        path: '/mainWiring',
-        name: 'mainWiring',
-        component: () => import('@/views/mainWiring')
+        path: '/MainWiring',
+        name: 'MainWiring',
+        component: () => import('@/views/MainWiring')
+      },
+      {
+        //  运行监视 —> 在线表计
+        path: '/OnlineMeter',
+        name: 'OnlineMeter',
+        component: () => import('@/views/OnlineMeter')
+      },
+      {
+        // 运行监视 -> 在线表计 -> 展示列表
+        path: '/meterManifestation',
+        name: 'meterManifestation',
+        component: () => import('@/components/onlineMeter/meterManifestation')
+      },
+      {
+        //  运行监视 -> 配电设备
+        path: '/ControllerSwitching',
+        name: 'ControllerSwitching',
+        component: () => import('@/views/ControllerSwitching')
+      },
+      {
+        //  运行监视 -> 表计数据
+        path: '/MeterData',
+        name: 'MeterData',
+        component: () => import('@/views/MeterData')
+      },
+      {
+        //  运行监视 -> 运行数据
+        path: '/OperatingData',
+        name: 'OperatingData',
+        component: () => import('@/views/OperatingData')
       },
       {
         // 数据分析 -> 电力统计
@@ -94,6 +124,12 @@ const routes = [
         path: '/YearPower',
         name: 'YearPower',
         component: () => import('@/views/YearPower')
+      },
+      {
+        //  报警事件
+        path: '/AlarmEvents',
+        name: 'AlarmEvents',
+        component: () => import('@/views/AlarmEvents')
       }
     ]
   }
