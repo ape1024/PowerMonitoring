@@ -27,6 +27,7 @@ export default {
 <style scoped lang='stylus'>
 @import '../../assets/css/base.styl'
 .Breadcrumb
-  border-bottom 1px solid $border-color-one
-  padding-bottom 20px
+  border-radius 5px
+  border 1px solid #c6c6c6
+  padding 7px 10px
 </style>

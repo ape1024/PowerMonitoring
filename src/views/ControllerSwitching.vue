@@ -1,23 +1,42 @@
 <template>
-  <el-row>
+  <el-row class="controllerSwitchingElrow">
     <!-- 运行监视 -> 配电设备 -->
     <el-col :span="24">
       <Breadcrumb />
-      <el-container>
-        <el-aside class="controllerAside" width="300px">
-          <el-tree :data="data" :props="defaultProps" @node-click="handleNodeClick"></el-tree>
+      <el-container class="cotrollerElcol">
+        <el-aside class="controllerAside" width="250px">
+          <el-tree :data="data" :props="defaultProps" @node-click="handleNodeClick">
+            <span class="custom-tree-node" slot-scope="{ node, data }">
+              <span>
+                <i :class="data.icon"></i>
+                {{ node.label }}
+              </span>
+            </span>
+          </el-tree>
         </el-aside>
         <el-main>
-          <h4 class="controllerTitle">啦啦啦啦啦啦啦啦</h4>
-          <el-table :data="tableData" stripe border style="width: 100%">
-            <el-table-column prop="date" label="电压箱"></el-table-column>
+          <h4 class="controllerTitle">测试用户A区配———直流屏</h4>
+          <el-table
+            :cell-style="columnStyle"
+            :show-header="false"
+            :data="tableData"
+            border
+            style="width: 100%"
+          >
+            <el-table-column prop="date" label="电压箱">
+              <template slot-scope="scope">
+                <span @click="tableClick" class="tableSpan">{{scope.row.date}}</span>
+              </template>
+            </el-table-column>
             <el-table-column prop="name" label="电压"></el-table-column>
           </el-table>
         </el-main>
       </el-container>
-      <div v-if="coverSiwth" class="coverLayer">
-        <controllerGraph @close="closeFn" />
-      </div>
+      <el-row :gutter="20" v-if="coverSiwth" class="coverLayer">
+        <el-col :span="12" :offset="6">
+          <controllerGraph @close="closeFn" />
+        </el-col>
+      </el-row>
     </el-col>
   </el-row>
 </template>
@@ -37,15 +56,46 @@ export default {
       coverSiwth: false,
       data: [
         {
-          label: '一级 1',
+          label: '测试用户A区配',
+          icon: 'eliconClaim',
           children: [
             {
-              label: '二级 1-1',
-              children: [
-                {
-                  label: '三级 1-1-1'
-                }
-              ]
+              label: '1#变压器12',
+              icon: 'eliconSuccess'
+            },
+            {
+              label: '2#变压器12',
+              icon: 'eliconSuccess'
+            },
+            {
+              label: '3#变压器12',
+              icon: 'eliconSuccess'
+            },
+            {
+              label: '4#变压器12',
+              icon: 'eliconSuccess'
+            }
+          ]
+        },
+        {
+          label: '测试用户A3楼配',
+          icon: 'eliconClaim',
+          children: [
+            {
+              label: '1#变压器12',
+              icon: 'eliconSuccess'
+            },
+            {
+              label: '2#变压器12',
+              icon: 'eliconSuccess'
+            },
+            {
+              label: '3#变压器12',
+              icon: 'eliconSuccess'
+            },
+            {
+              label: '4#变压器12',
+              icon: 'eliconSuccess'
             }
           ]
         }
@@ -78,11 +128,22 @@ export default {
   computed: {},
   watch: {},
   methods: {
+    tableClick(data) {
+      console.log(data)
+      this.coverSiwth = true
+    },
     handleNodeClick(data) {
       console.log(data);
     },
     closeFn() {
       this.coverSiwth = false
+    },
+    // eslint-disable-next-line consistent-return
+    columnStyle({ columnIndex }) {
+      if (columnIndex === 0) {
+        return 'background:#d4eafb;text-align:center'
+      }
+      return 'text-align:center'
     }
   },
   created() { }
@@ -91,15 +152,51 @@ export default {
 
 <style scoped lang='stylus'>
 @import '../assets/css/base.styl'
+.controllerSwitchingElrow
+  box-sizing border-box
+  padding 6px
+  border 1px solid #c6c6c6
+  border-radius 6px
+  height 100%
+  background #fff
+.cotrollerElcol
+  min-height 700px
+  border 1px solid
+  margin-top 6px
+  padding 8px 0
+  border-radius 6px
+  border-color #c6c6c6
 .controllerAside
-  padding 20px 0 0
+  padding 10px 4px 0
+  border-radius 6px
+  margin-left 6px
+  border 1px solid #c6c6c6
 .controllerTitle
   text-align center
   background $font-color-Brand
-  padding 10px 0
-  margin-bottom 20px
+  padding 6px 0
+  font-weight normal
+  margin 10px 0 20px
   color $font-color-white
   font-size $font-size-ExtraLarge
 .coverLayer
   coverLayer()
+.eliconClaim
+  width 18px
+  min-height 20px
+  cursor pointer
+  background url('../assets/img/tree_icons.png') no-repeat -224px 0
+  vertical-align middle
+  display inline-block
+.eliconSuccess
+  width 16px
+  min-height 20px
+  cursor pointer
+  background url('../assets/img/tree_icons.png') no-repeat -240px 0
+  vertical-align middle
+  display inline-block
+.tableSpan
+  tableSpan()
+.tableSpan:hover
+  text-decoration underline
 </style>

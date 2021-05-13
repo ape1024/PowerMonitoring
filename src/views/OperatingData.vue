@@ -1,5 +1,5 @@
 <template>
-  <el-row>
+  <el-row class="OperatingDataElrow">
     <!-- 运行监视 -> 运行数据 -->
     <el-col :span="24">
       <Breadcrumb />
@@ -18,7 +18,6 @@
           </div>
         </div>
         <div class="Condition-module_row">
-          <div class="Condition-module_explain"></div>
           <div class="Condition-module_date">
             <el-button size="small" type="primary">
               <i class="el-icon-printer"></i>
@@ -28,10 +27,26 @@
         </div>
       </div>
       <div class="operatingTable">
-        <el-table :data="tableData" border style="width: 100%">
-          <el-table-column prop="date" label="日期" width="180"></el-table-column>
-          <el-table-column prop="name" label="姓名" width="180"></el-table-column>
-          <el-table-column prop="address" label="地址"></el-table-column>
+        <el-table
+          :data="tableData"
+          border
+          style="width: 100%"
+          height="700"
+          :header-cell-style="{background:'#0068b8',color:'#fff'}"
+        >
+          <el-table-column align="center" prop="date" label="序号" width="50"></el-table-column>
+          <el-table-column align="center" prop="name" label="表计编号" width="250"></el-table-column>
+          <el-table-column align="center" prop="a" label="名称" width="250"></el-table-column>
+          <el-table-column align="center" prop="b" label="Ua"></el-table-column>
+          <el-table-column align="center" prop="c" label="Ub"></el-table-column>
+          <el-table-column align="center" prop="d" label="Uc"></el-table-column>
+          <el-table-column align="center" prop="e" label="Ia"></el-table-column>
+          <el-table-column align="center" prop="f" label="Ib"></el-table-column>
+          <el-table-column align="center" prop="g" label="Ic"></el-table-column>
+          <el-table-column align="center" prop="h" label="P"></el-table-column>
+          <el-table-column align="center" prop="h" label="Pa"></el-table-column>
+          <el-table-column align="center" prop="h" label="Pb"></el-table-column>
+          <el-table-column align="center" prop="h" label="Pc"></el-table-column>
         </el-table>
       </div>
     </el-col>
@@ -52,21 +67,16 @@ export default {
       options: [],
       tableData: [
         {
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄'
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
+          date: '1',
+          name: '123',
+          a: '143432',
+          b: '352324',
+          c: '543564',
+          d: '654647',
+          e: '786785',
+          f: '967868',
+          g: '234324',
+          h: '543535'
         }
       ]
     };
@@ -80,21 +90,27 @@ export default {
 
 <style scoped lang='stylus'>
 @import '../assets/css/base.styl'
+.OperatingDataElrow
+  box-sizing border-box
+  padding 6px
+  border 1px solid #c6c6c6
+  border-radius 6px
+  height 100%
+  background #fff
 .ElectricityCondition
   display flex
   flex-direction row
   min-width 200px
-  font-size $font-size-Base
+  font-size 14px
   flex-flow row wrap
-  border-bottom 1px solid $border-color-one
+  border 1px solid #c6c6c6
+  margin-top 6px
+  border-radius 6px
 .Condition-module_row
-  min-width 200px
   display flex
   flex-direction row
   flex-flow row wrap
-  padding 10px 0
 .Condition-module_explain
-  min-width 80px
   display flex
   padding 0 10px
   align-items center
@@ -111,8 +127,12 @@ export default {
   display flex
   flex-direction row
   flex-flow row wrap
-  padding 10px 0 10px 10px
+  padding 4px 10px 4px 10px
 .operatingTable
+  margin-top 10px
   overflow hidden
-  padding 20px 0 0
+  box-sizing border-box
+  padding 6px
+  border 1px solid #c6c6c6
+  border-radius 6px
 </style>

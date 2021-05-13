@@ -1,5 +1,5 @@
 <template>
-  <el-row>
+  <el-row class="ElectricityStatisticsElrow">
     <!-- 数据分析 -> 电力统计 -->
     <el-col :span="24">
       <Breadcrumb />
@@ -18,7 +18,7 @@
           </div>
         </div>
         <div class="Condition-module_row">
-          <div class="Condition-module_explain">配电室:</div>
+          <div class="Condition-module_explain">测量位置:</div>
           <div class="Condition-module_content">
             <el-select size="small" v-model="value" filterable placeholder="请选择">
               <el-option
@@ -60,23 +60,30 @@
             </div>
           </div>
           <div class="Condition-module_date">
-            <el-button size="small" type="primary">查询</el-button>
+            <el-button size="small" type="primary">
+              <i class="el-icon-search"></i>
+              查询
+            </el-button>
           </div>
         </div>
       </div>
       <el-col :span="24" class="lineChart">
-        <div id="Electricity" :style="{width: '100%', height: '280px'}"></div>
+        <div id="Electricity" :style="{width: '100%', height: '350px'}"></div>
       </el-col>
       <el-row :gutter="20">
         <el-col :span="12">
           <div class="histogramHead">有功尖峰平谷分布图</div>
           <!-- pieChart -->
-          <pieChart />
+          <div class="pieChartCol">
+            <pieChart :pieChartId="pieChartId" />
+          </div>
         </el-col>
         <el-col :span="12">
           <div class="histogramHead">无功尖峰平谷分布图</div>
           <!-- pieChart -->
-          <pieChart />
+          <div class="pieChartCol">
+            <pieChart :pieChartId="pieChartIdTwo" />
+          </div>
         </el-col>
       </el-row>
     </el-col>
@@ -100,7 +107,9 @@ export default {
       pickerValue: '',
       datetimerange: [],
       radio: 1,
-      pickerType: 'date'
+      pickerType: 'date',
+      pieChartId: 'pieChartOne',
+      pieChartIdTwo: 'pieChartTwo'
     };
   },
   computed: {},
@@ -123,79 +132,20 @@ export default {
     drawLine() {
       const myChart = this.$echarts.init(document.getElementById('Electricity'))
       myChart.setOption({
-        ttitle: {
-          x: 'center'
-        },
-        legend: {
-          orient: 'horizontal',
-          x: 'center',
-          y: 'top',
-          data: ['今日负荷', '昨日负荷']
-        },
-        grid: {
-          top: '16%',
-          left: '2%',
-          right: '2%',
-          bottom: '2%',
-          containLabel: true
-        },
-        tooltip: {
-          trigger: 'axis'
-        },
+        backgroundColor: '#f2f2f2',
         xAxis: {
           type: 'category',
-          axisLine: {
-            lineStyle: {
-              color: '#000'
-            }
-          },
-          axisLabel: {
-            rotate: 0,
-            interval: 0
-          },
-          boundaryGap: false,
-          data: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15']
+          data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
         },
-
         yAxis: {
-          type: 'value',
-          min: 0,
-          splitNumber: 5
+          type: 'value'
         },
-
         series: [
           {
-            name: '今日负荷',
-            data: [820, 932, 301, 1434, 1290, 1330, 1320],
-            type: 'line',
-            symbolSize: 8,
-            symbol: 'circle',
-            smooth: 0.5,
-            itemStyle: {
-              normal: {
-                borderColor: '#409EFF',
-                lineStyle: {
-                  color: 'rgba(0,0,0,0)'
-                }
-              }
-            }
-          },
-          {
-            name: '昨日负荷',
-            data: [120, 232, 541, 134, 290, 130, 120],
-            type: 'line',
-            symbolSize: 10,
-            symbol: 'circle',
-            itemStyle: {
-              normal: {
-                lineStyle: {
-                  color: 'rgba(0,0,0,0)'
-                }
-              }
-            }
+            data: [120, 200, 150, 80, 70, 110, 130],
+            type: 'bar'
           }
-        ],
-        color: ['#409EFF', '#FF9F7F']
+        ]
       })
     }
   },
@@ -205,21 +155,28 @@ export default {
 
 <style scoped lang='stylus'>
 @import '../assets/css/base.styl'
+.ElectricityStatisticsElrow
+  box-sizing border-box
+  padding 6px
+  border 1px solid #c6c6c6
+  border-radius 6px
+  height 100%
+  background #fff
 .ElectricityCondition
+  margin-top 6px
   display flex
   flex-direction row
-  min-width 200px
   font-size $font-size-Base
   flex-flow row wrap
-  border-bottom 1px solid $border-color-one
+  border 1px solid $border-color-one
+  border-radius 6px
 .Condition-module_row
   min-width 200px
   display flex
   flex-direction row
   flex-flow row wrap
-  padding 10px 0
+  padding 4px 0
 .Condition-module_explain
-  min-width 80px
   display flex
   padding 0 10px
   align-items center
@@ -236,7 +193,7 @@ export default {
   display flex
   flex-direction row
   flex-flow row wrap
-  padding 10px 0 10px 10px
+  padding 4px 10px 4px 10px
 .Condition-module_date_explain
   min-width 100px
   display flex
@@ -251,9 +208,10 @@ export default {
   justify-content flex-start
   display flex
 .lineChart
-  padding 20px 0 20px
-  margin-bottom 20px
-  border-bottom 1px solid $border-color-one
+  padding 10px
+  margin 6px 0
+  border 1px solid #dcdfe6
+  border-radius 6px
 .histogramHead
   height 30px
   line-height 30px
@@ -262,4 +220,9 @@ export default {
   width 100%
   text-indent 2em
   background $background-color-Brand
+.pieChartCol
+  padding 0 10px
+  margin-top 10px
+  border-radius 6px
+  border 1px solid #c6c6c6
 </style>

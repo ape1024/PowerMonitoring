@@ -1,11 +1,11 @@
 <template>
-  <el-row>
+  <el-row class="DayPowerElrow">
     <!-- 日用电量统计 -->
     <el-col :span="24">
       <Breadcrumb />
       <div class="ElectricityCondition">
         <div class="Condition-module_row">
-          <div class="Condition-module_explain">配电室:</div>
+          <div class="Condition-module_explain">测量位置:</div>
           <div class="Condition-module_content">
             <el-select size="small" v-model="value" filterable placeholder="请选择">
               <el-option
@@ -34,15 +34,46 @@
         </div>
       </div>
       <div class="powerTable">
-        <h4 class="powerTitle">管理员 2021-05-06日 用电量统计报表</h4>
-        <el-table :data="tableData" height="300" border style="width: 100%">
-          <el-table-column prop="date" label="日期" width="180"></el-table-column>
-          <el-table-column prop="name" label="姓名" width="180"></el-table-column>
-          <el-table-column prop="address" label="地址"></el-table-column>
+        <h4 class="powerTitle">
+          管理员 2021-05-06日 用电量统计报表
+          <span class="powerTitleSpan">单位：kWh</span>
+        </h4>
+        <el-table
+          :header-cell-style="{background:'#0068b8',color:'#fff'}"
+          :data="tableData"
+          border
+          style="width: 100%"
+        >
+          <el-table-column align="center" fixed prop="date" label="日期/电量" width="180"></el-table-column>
+          <el-table-column align="center" prop="a" label="01:00" width="100"></el-table-column>
+          <el-table-column align="center" prop="b" label="02:00" width="100"></el-table-column>
+          <el-table-column align="center" prop="c" label="03:00" width="100"></el-table-column>
+          <el-table-column align="center" prop="d" label="04:00" width="100"></el-table-column>
+          <el-table-column align="center" prop="e" label="05:00" width="100"></el-table-column>
+          <el-table-column align="center" prop="e" label="06:00" width="100"></el-table-column>
+          <el-table-column align="center" prop="e" label="07:00" width="100"></el-table-column>
+          <el-table-column align="center" prop="e" label="08:00" width="100"></el-table-column>
+          <el-table-column align="center" prop="e" label="09:00" width="100"></el-table-column>
+          <el-table-column align="center" prop="e" label="10:00" width="100"></el-table-column>
+          <el-table-column align="center" prop="e" label="11:00" width="100"></el-table-column>
+          <el-table-column align="center" prop="e" label="12:00" width="100"></el-table-column>
+          <el-table-column align="center" prop="e" label="13:00" width="100"></el-table-column>
+          <el-table-column align="center" prop="e" label="14:00" width="100"></el-table-column>
+          <el-table-column align="center" prop="e" label="15:00" width="100"></el-table-column>
+          <el-table-column align="center" prop="e" label="16:00" width="100"></el-table-column>
+          <el-table-column align="center" prop="e" label="17:00" width="100"></el-table-column>
+          <el-table-column align="center" prop="e" label="18:00" width="100"></el-table-column>
+          <el-table-column align="center" prop="e" label="19:00" width="100"></el-table-column>
+          <el-table-column align="center" prop="e" label="20:00" width="100"></el-table-column>
+          <el-table-column align="center" prop="e" label="21:00" width="100"></el-table-column>
+          <el-table-column align="center" prop="e" label="22:00" width="100"></el-table-column>
+          <el-table-column align="center" prop="e" label="23:00" width="100"></el-table-column>
+          <el-table-column align="center" prop="e" label="24:00" width="100"></el-table-column>
+          <el-table-column align="center" prop="h" label="合计" width="150"></el-table-column>
         </el-table>
       </div>
       <div class="lineChart">
-        <h4 class="powerTitle">管理员 2021-05-06日 用电量统计报表</h4>
+        <h4 class="powerTitleTwo">管理员 2021-05-06日 用电量统计报表</h4>
         <div id="LineChart" :style="{width: '100%', height: '400px'}"></div>
       </div>
     </el-col>
@@ -65,46 +96,30 @@ export default {
       tableData: [
         {
           date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄'
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
+          a: '877.23',
+          b: '670.24',
+          c: '457.90',
+          d: '739.20',
+          e: '435.32',
+          h: '2242.51'
         },
         {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
+          date: '2016-05-02',
+          a: '877.23',
+          b: '670.24',
+          c: '457.90',
+          d: '739.20',
+          e: '435.32',
+          h: '242.51'
         },
         {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
+          date: '2016-05-02',
+          a: '877.23',
+          b: '670.24',
+          c: '457.90',
+          d: '739.20',
+          e: '435.32',
+          h: '242.51'
         }
       ]
     };
@@ -118,9 +133,7 @@ export default {
     drawLine() {
       const myChart = this.$echarts.init(document.getElementById('LineChart'))
       myChart.setOption({
-        title: {
-          text: '折线图堆叠'
-        },
+        backgroundColor: '#f2f2f2',
         tooltip: {
           trigger: 'axis'
         },
@@ -187,21 +200,28 @@ export default {
 
 <style scoped lang='stylus'>
 @import '../assets/css/base.styl'
+.DayPowerElrow
+  box-sizing border-box
+  padding 6px
+  border 1px solid #c6c6c6
+  border-radius 6px
+  height 100%
+  background #fff
 .ElectricityCondition
   display flex
   flex-direction row
   min-width 200px
-  font-size $font-size-Base
+  font-size 14px
   flex-flow row wrap
-  border-bottom 1px solid $border-color-one
+  border 1px solid #c6c6c6
+  border-radius 6px
+  margin-top 6px
 .Condition-module_row
   min-width 200px
   display flex
   flex-direction row
   flex-flow row wrap
-  padding 10px 0
 .Condition-module_explain
-  min-width 80px
   display flex
   padding 0 10px
   align-items center
@@ -218,16 +238,35 @@ export default {
   display flex
   flex-direction row
   flex-flow row wrap
-  padding 10px 0 10px 10px
+  padding 4px 10px 4px 10px
 .powerTable
-  margin 0 0 20px
-  padding 20px 0
-  border-bottom 1px solid $border-color-one
+  margin 6px 0
+  padding 10px
+  border 1px solid #c6c6c6
+  border-radius 6px
   position relative
   overflow hidden
 .powerTitle
+  position relative
+  overflow hidden
   text-align center
-  padding-bottom 20px
+  padding-bottom 10px
   font-size $font-size-large
-  color $font-color-routine
+  font-weight normal
+  color #333
+.powerTitleSpan
+  float right
+.lineChart
+  padding 10px 20px 20px
+  box-sizing border-box
+  border-radius 6px
+  border 1px solid #c6c6c6
+.powerTitleTwo
+  position relative
+  overflow hidden
+  text-align center
+  padding-bottom 10px
+  font-size $font-size-large
+  font-weight normal
+  color #333
 </style>

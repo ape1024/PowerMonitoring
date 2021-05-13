@@ -3,8 +3,10 @@
     <!-- 曲线图 -->
     <el-col :span="24">
       <div class="controllerGraph">
-        <h4 class="graphTitle">变压器曲线数据展示</h4>
-        <div class="graphSubject">
+        <div class="graphSubject" @mousedown="move">
+          <div>
+            <h4 class="graphTitle">变压器曲线数据展示</h4>
+          </div>
           <el-switch v-model="switchValue" active-text="单选" inactive-text="多选"></el-switch>
           <div id="graph" :style="{width: '100%', height: '400px'}"></div>
           <div class="operation">
@@ -23,7 +25,9 @@ export default {
   data() {
     return {
       switchValue: false,
-      selectedValue: ''
+      selectedValue: '',
+      positionX: '',
+      positionY: ''
     };
   },
   computed: {},
@@ -115,6 +119,26 @@ export default {
           }
         ]
       })
+    },
+    move() {
+      // console.log(e, '/////')
+      // const odiv = e.target
+      // const disX = e.clientX - odiv.offsetLeft;
+      // const disY = e.clientY - odiv.offsetTop;
+      // // eslint-disable-next-line no-shadow
+      // document.onmousemove = (e) => {
+      //   const left = e.clientX - disX;
+      //   const top = e.clientY - disY;
+      //   this.positionX = top;
+      //   this.positionY = left;
+
+      //   odiv.style.left = `${left}px`;
+      //   odiv.style.top = `${top}px`;
+      // };
+      // document.onmouseup = () => {
+      //   document.onmousemove = null;
+      //   document.onmouseup = null;
+      // };
     }
   },
   created() {
@@ -127,19 +151,27 @@ export default {
 @import '../../assets/css/base.styl'
 .controllerGraph
   margin 200px auto 0
-  width 1000px
-  background $background-color-FFF
 .graphTitle
-  padding 10px 0
+  padding 4px
   text-align center
-  color $font-color-routine
-  font-size $font-size-ExtraLarge
+  display inline-block
+  font-size 14px
+  color #fff
+  font-weight normal
+  background-color #0068b8
+  opacity 0.75
 .graphSubject
   position relative
   overflow hidden
-  padding 20px
+  padding 0 10px 10px
+  border 1px solid #bed1e1
+  box-shadow 0 0 5px #bed1e1
+  -moz-box-shadow 0 0 5px #bed1e1
+  -webkit-box-shadow 0 0 5px #bed1e1
+  background-color #fff
+  transition 0.2s
 .operation
   margin-top 10px
-  text-align center
+  text-align right
   overflow hidden
 </style>

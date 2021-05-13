@@ -2,7 +2,7 @@
   <el-row class="pieChart">
     <el-col :span="24">
       <!-- 饼状图 -->
-      <div id="pieChart" :style="{width: '100%', height: '280px'}"></div>
+      <div :id="pieChartId" :style="{width: '100%', height: '300px'}"></div>
     </el-col>
   </el-row>
 </template>
@@ -11,6 +11,7 @@
 export default {
   name: 'pieChart',
   components: {},
+  props: ['pieChartId'],
   data() {
     return {};
   },
@@ -21,8 +22,9 @@ export default {
   },
   methods: {
     drawLine() {
-      const myChart = this.$echarts.init(document.getElementById('pieChart'))
+      const myChart = this.$echarts.init(document.getElementById(this.pieChartId))
       myChart.setOption({
+        backgroundColor: '#f2f2f2',
         title: {
           subtext: '单位:  kWh',
           subtextStyle: {
@@ -82,5 +84,6 @@ export default {
 
 <style scoped lang='stylus'>
 .pieChart
-  padding 20px 0
+  margin 20px 0
+  border 1px solid #c6c6c6
 </style>

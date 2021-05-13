@@ -4,7 +4,7 @@ $font-size-Base = 14px
 $font-size-Medium = 16px
 $font-size-large = 18px
 $font-size-ExtraLarge = 20px
-$font-size-Title = 32px
+$font-size-Title = 30px
 $font-size-superLarge = 40px
 
 // 字体颜色
@@ -12,8 +12,8 @@ $font-color-main = #303133
 $font-color-routine = #606266
 $font-color-secondary = #909399
 $font-color-white = #fff
-$font-color-Brand = #409EFF
-$font-color-Success = #67C23A
+$font-color-Brand = #0068b8
+$font-color-Success = #008b1f
 $font-color-Warning = #E6A23C
 $font-color-Danger = #F56C6C
 $font-color-Info = #909399
@@ -25,7 +25,7 @@ $border-color-three = #EBEEF5
 $border-color-four = #F2F6FC
 
 //  背景
-$background-color-Brand = #409EFF
+$background-color-Brand = #0068b8
 $background-color-Success = #67C23A
 $background-color-Warning = #E6A23C
 $background-color-Danger = #F56C6C
@@ -49,3 +49,15 @@ coverLayer()
   background: rgba(000, 000, 000, .2)
   overflow hidden
   z-index $z-index-superLarge
+paneltoolClose()
+  display inline-block
+  cursor pointer
+  width 16px
+  height 16px
+  opacity 0.6
+  vertical-align top
+  transition .2s
+  background url('../../assets/img/panel_tools.png') no-repeat -16px 0px
+tableSpan()
+  transition 0.4s
+  cursor pointer

@@ -1,63 +1,80 @@
 <template>
-  <el-row>
+  <el-row class="ElectricityCustomElrow">
     <el-col :span="24">
       <!-- 电量定制 -->
       <Breadcrumb />
       <div class="TabControl">
         <TabControl />
       </div>
-      <div class="ElectricityCondition">
-        <div class="Condition-module_date">
-          <div class="Condition-module_date_explain">
-            <el-radio-group v-model="radio">
-              <el-radio :label="1">日</el-radio>
-              <el-radio :label="2">月</el-radio>
-              <el-radio :label="3">年</el-radio>
-              <el-radio :label="4">自定义</el-radio>
-            </el-radio-group>
-          </div>
-          <div class="Condition-module_date_content">
-            <div v-if="radio !== 4">
-              <el-date-picker
-                size="small"
-                v-model="pickerValue"
-                :type="pickerType"
-                placeholder="选择日期"
-              ></el-date-picker>
-            </div>
-            <div v-if="radio === 4">
-              <el-date-picker
-                size="small"
-                v-model="datetimerange"
-                type="datetimerange"
-                range-separator="至"
-                start-placeholder="开始日期"
-                end-placeholder="结束日期"
-              ></el-date-picker>
-            </div>
-          </div>
+      <div class="ElectricityConditionWrapper">
+        <div class="ElectricityCondition">
           <div class="Condition-module_date">
-            <el-button size="small" type="primary">查询</el-button>
+            <div class="Condition-module_date_explain">
+              <el-radio-group v-model="radio">
+                <el-radio :label="1">日</el-radio>
+                <el-radio :label="2">月</el-radio>
+                <el-radio :label="3">年</el-radio>
+                <el-radio :label="4">自定义</el-radio>
+              </el-radio-group>
+            </div>
+            <div class="Condition-module_date_content">
+              <div v-if="radio !== 4">
+                <el-date-picker
+                  size="small"
+                  v-model="pickerValue"
+                  :type="pickerType"
+                  placeholder="选择日期"
+                ></el-date-picker>
+              </div>
+              <div v-if="radio === 4">
+                <el-date-picker
+                  size="small"
+                  v-model="datetimerange"
+                  type="datetimerange"
+                  range-separator="至"
+                  start-placeholder="开始日期"
+                  end-placeholder="结束日期"
+                ></el-date-picker>
+              </div>
+            </div>
+            <div class="Condition-module_date">
+              <el-button size="small" type="primary">查询</el-button>
+            </div>
           </div>
         </div>
       </div>
+
       <div class="electricityTable">
-        <el-table :data="tableData" border height="300" style="width: 100%">
-          <el-table-column prop="date" label="日期" width="180"></el-table-column>
-          <el-table-column prop="name" label="姓名" width="180"></el-table-column>
-          <el-table-column prop="address" label="地址"></el-table-column>
-        </el-table>
+        <div class="electricityTableWrapper">
+          <el-table
+            :data="tableData"
+            border
+            height="300"
+            style="width: 100%"
+            :header-cell-style="{background:'#0068b8',color:'#fff'}"
+          >
+            <el-table-column align="center" prop="date" label="分项名称"></el-table-column>
+            <el-table-column align="center" prop="name" label="尖段"></el-table-column>
+            <el-table-column align="center" prop="address" label="峰段"></el-table-column>
+            <el-table-column align="center" prop="address" label="谷段"></el-table-column>
+            <el-table-column align="center" prop="address" label="总电量"></el-table-column>
+          </el-table>
+        </div>
       </div>
-      <el-row :gutter="20">
+      <el-row :gutter="20" class="pieChartElrow">
         <el-col :span="12">
           <div class="histogramHead">有功尖峰平谷分布图</div>
           <!-- pieChart -->
-          <pieChart />
+          <div class="pieChartCol">
+            <pieChart :pieChartId="pieChartId" />
+          </div>
         </el-col>
         <el-col :span="12">
           <div class="histogramHead">无功尖峰平谷分布图</div>
           <!-- pieChart -->
-          <pieChart />
+          <div class="pieChartCol">
+            <pieChart :pieChartId="pieChartIdTwo" />
+          </div>
         </el-col>
       </el-row>
     </el-col>
@@ -78,6 +95,8 @@ export default {
   },
   data() {
     return {
+      pieChartId: 'pieChartId',
+      pieChartIdTwo: 'pieChartIdTwo',
       radio: '',
       datetimerange: [],
       pickerValue: '',
@@ -157,23 +176,31 @@ export default {
 
 <style scoped lang='stylus'>
 @import '../assets/css/base.styl'
+.ElectricityCustomElrow
+  box-sizing border-box
+  padding 6px
+  border 1px solid #c6c6c6
+  border-radius 6px
+  height 100%
+  background #fff
 .ElectricityCondition
   display flex
   flex-direction row
   min-width 200px
   font-size $font-size-Base
   flex-flow row wrap
-  border-bottom 1px solid $border-color-one
+  border 1px solid #c6c6c6
+  border-radius 6px
 .TabControl
   overflow hidden
   box-sizing content-box
-  padding 10px 10px 0
+  padding 10px 0 0
 .Condition-module_date
   min-width 300px
   display flex
   flex-direction row
   flex-flow row wrap
-  padding 10px 0 10px 10px
+  padding 4px 10px 4px 10px
 .Condition-module_date_explain
   min-width 100px
   display flex
@@ -188,10 +215,8 @@ export default {
   justify-content flex-start
   display flex
 .electricityTable
-  padding 20px
-  height 300px
+  padding 10px
   margin-bottom 20px
-  border-bottom 1px solid $border-color-one
   position relative
   overflow hidden
 .histogramHead
@@ -202,4 +227,19 @@ export default {
   width 100%
   text-indent 2em
   background $background-color-Brand
+.pieChartCol
+  padding 0 10px
+  margin-top 10px
+  border-radius 6px
+  border 1px solid #c6c6c6
+.ElectricityConditionWrapper
+  box-sizing border-box
+  padding 0 10px
+  overflow hidden
+.electricityTableWrapper
+  border-radius 6px
+  padding 6px
+  border 1px solid #c6c6c6
+.pieChartElrow
+  padding 0 10px
 </style>

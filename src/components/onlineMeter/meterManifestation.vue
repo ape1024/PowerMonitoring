@@ -1,29 +1,594 @@
 <template>
-  <el-row>
-    <el-col :span="24">
+  <el-row class="meterManifestationElrow">
+    <el-col :span="24" class="meterManifestationElcol">
       <Breadcrumb />
-      <el-container>
-        <el-aside width="500px">
-          <el-button @click="getBack" class="meterButton" size="small">返回</el-button>
-          <div class="meterAside">
-            <el-tree :data="treeData" :props="defaultProps" @node-click="handleNodeClick"></el-tree>
-          </div>
-        </el-aside>
-        <el-main>
-          <div class="meterTable">
-            <el-table border :data="tableData" style="width: 100%">
-              <el-table-column label="状态" prop="date">
-                <template slot-scope="scope">
-                  <span @click="tableClick" class="tableSpan">{{scope.row.date}}</span>
-                </template>
-              </el-table-column>
-            </el-table>
-          </div>
-        </el-main>
-      </el-container>
-      <div v-if="coverSiwth" class="coverLayer">
-        <meterCoverLayer @close="closeFn" />
+      <div class="meterManifestationSubject">
+        <el-row :gutter="10">
+          <el-col class="meterManifestationSubjectCol" :span="8">
+            <div class="meterManifestationContent">
+              <h4 class="meterManifestationContentTitle">
+                北工大软件园A区配电室1#采集器
+                <br />CJQ510040101
+              </h4>
+              <div class="meterManifestationTimeline">
+                <div class="meterManifestationTimelineLeft meterManifestationTimelineLeftTwo">
+                  <ul class="meterManifestationTimelineUl">
+                    <li @click="tableClick" class="meterManifestationTimelineLi selectedStyle">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div
+                        title="412-1:B1ATP1、2、3，B2ATP1、2消防风机"
+                        class="meterManifestationTimelineText"
+                      >412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="meterManifestationTimelineRight">
+                  <ul class="meterManifestationTimelineUl">
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </el-col>
+          <el-col class="meterManifestationSubjectCol" :span="8">
+            <div class="meterManifestationContent">
+              <h4 class="meterManifestationContentTitle">
+                北工大软件园A区配电室1#采集器
+                <br />CJQ510040101
+              </h4>
+              <div class="meterManifestationTimeline">
+                <div class="meterManifestationTimelineLeft meterManifestationTimelineLeftTwo">
+                  <ul class="meterManifestationTimelineUl">
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="meterManifestationTimelineRight">
+                  <ul class="meterManifestationTimelineUl">
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </el-col>
+          <el-col class="meterManifestationSubjectCol" :span="4">
+            <div class="meterManifestationContent">
+              <h4 class="meterManifestationContentTitle">
+                北工大软件园A区配电室1#采集器
+                <br />CJQ510040101
+              </h4>
+              <div class="meterManifestationTimeline">
+                <div class="meterManifestationTimelineLeft">
+                  <ul class="meterManifestationTimelineUl">
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </el-col>
+          <el-col class="meterManifestationSubjectCol" :span="4">
+            <div class="meterManifestationContent">
+              <h4 class="meterManifestationContentTitle">
+                北工大软件园A区配电室1#采集器
+                <br />CJQ510040101
+              </h4>
+              <div class="meterManifestationTimeline">
+                <div class="meterManifestationTimelineLeft">
+                  <ul class="meterManifestationTimelineUl">
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </el-col>
+          <el-col class="meterManifestationSubjectCol" :span="4">
+            <div class="meterManifestationContent">
+              <h4 class="meterManifestationContentTitle">
+                北工大软件园A区配电室1#采集器
+                <br />CJQ510040101
+              </h4>
+              <div class="meterManifestationTimeline">
+                <div class="meterManifestationTimelineLeft">
+                  <ul class="meterManifestationTimelineUl">
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </el-col>
+          <el-col class="meterManifestationSubjectCol" :span="4">
+            <div class="meterManifestationContent">
+              <h4 class="meterManifestationContentTitle">
+                北工大软件园A区配电室1#采集器
+                <br />CJQ510040101
+              </h4>
+              <div class="meterManifestationTimeline">
+                <div class="meterManifestationTimelineLeft">
+                  <ul class="meterManifestationTimelineUl">
+                    <li class="meterManifestationTimelineLi selectedStyle">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                    <li class="meterManifestationTimelineLi">
+                      <div class="meterManifestationTimelineLine"></div>
+                      <div class="meterManifestationTimelineDot"></div>
+                      <div class="meterManifestationTimelineText">412-1:B1ATP1、2、3，B2ATP1、2消防风机</div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </el-col>
+        </el-row>
+        <div class="meterManifestationButton">
+          <el-button @click="getBackFn" size="large" type="primary">{{getBack}}</el-button>
+        </div>
       </div>
+      <el-row :gutter="20" v-if="coverSiwth" class="coverLayer">
+        <el-col :span="12" :offset="6">
+          <meterCoverLayer @close="closeFn" />
+        </el-col>
+      </el-row>
     </el-col>
   </el-row>
 </template>
@@ -40,7 +605,68 @@ export default {
   },
   data() {
     return {
+      getBack: '< 返回',
       coverSiwth: false,
+      activities: [
+        {
+          content: '201:1#进线',
+          timestamp: '2018-04-12 20:46',
+          size: 'large',
+          color: 'red'
+        }, {
+          content: '201:1#进线',
+          timestamp: '2018-04-03 20:46',
+          color: 'red'
+        }, {
+          content: '201:1#进线',
+          timestamp: '2018-04-03 20:46',
+          size: 'large',
+          color: 'red'
+        }, {
+          content: '201:1#进线',
+          timestamp: '2018-04-03 20:46',
+          color: 'red'
+        }
+      ],
+      activitiesTwo: [
+        {
+          content: '201:1#进线',
+          timestamp: '2018-04-12 20:46',
+          size: 'large',
+          color: 'red'
+        }, {
+          content: '201:1#进线',
+          timestamp: '2018-04-03 20:46',
+          color: 'red'
+        }, {
+          content: '201:1#进线',
+          timestamp: '2018-04-03 20:46',
+          size: 'large',
+          color: 'red'
+        }, {
+          content: '201:1#进线',
+          timestamp: '2018-04-03 20:46',
+          color: 'red'
+        }, {
+          content: '201:1#进线',
+          timestamp: '2018-04-12 20:46',
+          size: 'large',
+          color: 'red'
+        }, {
+          content: '201:1#进线',
+          timestamp: '2018-04-03 20:46',
+          color: 'red'
+        }, {
+          content: '201:1#进线',
+          timestamp: '2018-04-03 20:46',
+          size: 'large',
+          color: 'red'
+        }, {
+          content: '201:1#进线',
+          timestamp: '2018-04-03 20:46',
+          color: 'red'
+        }
+      ],
       treeData: [
         {
           label: '一级 1'
@@ -87,10 +713,14 @@ export default {
   computed: {},
   watch: {},
   methods: {
+    timelineitemFn(data) {
+      console.log(data)
+      this.coverSiwth = true
+    },
     handleNodeClick(data) {
       console.log(data)
     },
-    getBack() {
+    getBackFn() {
       this.$router.push('OnlineMeter')
     },
     closeFn() {
@@ -106,20 +736,89 @@ export default {
 
 <style scoped lang='stylus'>
 @import '../../assets/css/base.styl'
-.meterAside
-  overflow hidden
-  font-size 20px
-  padding 30px 0 0
-.meterTable
-  overflow hidden
-  position relative
-  width 500px
-.meterButton
-  margin 20px 0 0
+.meterManifestationElrow
+  border 1px solid #c6c6c6
+  border-radius 6px
+  padding 6px
+  box-sizing border-box
+  background #fff
+  height 100%
+.meterManifestationElcol
+  height 100%
+.meterManifestationSubject
+  border-radius 6px
+  margin 6px 0 0 !important
+  padding 6px
+  box-sizing border-box
+  border 1px solid #c6c6c6
 .coverLayer
   coverLayer()
 .tableSpan
   cursor pointer
   color $font-color-Brand
   text-decoration underline
+.meterManifestationContent
+  border-radius 6px
+  overflow hidden
+  border 1px solid #c6c6c6
+.meterManifestationContentTitle
+  font-weight normal
+  text-align center
+  font-size 16px
+  color #fff
+  background #0068b8
+.meterManifestationTimeline
+  overflow hidden
+.meterManifestationSubjectCol
+  margin-bottom 10px
+.meterManifestationButton
+  text-align right
+.el-timeline-item__content
+  cursor pointer
+  color #337ab7
+.meterManifestationTimelineUl
+  overflow hidden
+  display flex
+  flex-wrap wrap
+.meterManifestationTimelineLi
+  width 100%
+  line-height 26px
+  display flex
+  cursor pointer
+.meterManifestationTimelineLine
+  width 26px
+  height 26px
+  background url('../../assets/img/line_dash.png') 0 0 no-repeat
+  background-size 52px 26px
+.meterManifestationTimelineDot
+  width 12px
+  height 12px
+  border-radius 50%
+  text-align center
+  vertical-align middle
+  /* margin: 0 .1rem; */
+  margin 6px
+  background red
+.meterManifestationTimelineText
+  width 200px
+  word-break keep-all
+  white-space nowrap
+  overflow hidden
+  text-overflow ellipsis
+  color #337ab7
+.meterManifestationTimelineLeft
+  width 100%
+  overflow hidden
+.meterManifestationTimelineLeftTwo
+  width 50%
+  float left
+.meterManifestationTimelineRight
+  width 50%
+  float right
+  overflow hidden
+.meterManifestationTimelineUl li:last-child .meterManifestationTimelineLine
+  background url('../../assets/img/line_dash.png') -18px 1px no-repeat
+  background-size 52px 26px
+.selectedStyle
+  background-color #dfedf9
 </style>

@@ -4,9 +4,10 @@ import axios from 'axios';
 axios.defaults.withCredentials = true;
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 axios.defaults.withCredentials = false;
+const test = 'http://192.168.2.64:8100'
 
 // 一般get请求
-export const get = (url) => axios.get(`${window.Test}${url}`).then((res) => {
+export const get = (url) => axios.get(`${test}${url}`).then((res) => {
   if (res.status) {
     return Promise.resolve(res.data);
   }
@@ -16,7 +17,7 @@ export const get = (url) => axios.get(`${window.Test}${url}`).then((res) => {
 // 一般post请求
 export const post = (url, val) => {
   const data = val !== undefined ? val : '';
-  return axios.post(`${window.Test}${url}`, data).then((res) => {
+  return axios.post(`${test}${url}`, data).then((res) => {
     if (res.status) {
       return Promise.resolve(res.data);
     }

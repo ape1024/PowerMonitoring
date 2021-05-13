@@ -43,7 +43,10 @@
             ></el-date-picker>
           </div>
           <div class="Condition-module_date">
-            <el-button size="small" type="primary">查询</el-button>
+            <el-button size="small" type="primary">
+              <i class="el-icon-search"></i>
+              查询
+            </el-button>
           </div>
         </div>
       </div>
@@ -112,7 +115,7 @@ export default {
   display flex
   flex-direction row
   flex-flow row wrap
-  padding 10px 0 10px 10px
+  padding 4px 10px 4px 10px
 .curveGraph
   padding 20px 0
   overflow hidden

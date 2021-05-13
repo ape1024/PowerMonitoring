@@ -3,7 +3,7 @@
   <el-row>
     <!-- 折线图 -->
     <el-col :span="24">
-      <div id="TimelineChart" :style="{width: '100%', height: '500px'}"></div>
+      <div id="TimelineChart" :style="{width: '100%', height: '670px'}"></div>
     </el-col>
   </el-row>
 </template>
@@ -34,15 +34,12 @@ export default {
       }
       const myChart = this.$echarts.init(document.getElementById('TimelineChart'))
       myChart.setOption({
+        backgroundColor: '#f2f2f2',
         tooltip: {
           trigger: 'axis',
           position(pt) {
             return [pt[0], '10%'];
           }
-        },
-        title: {
-          left: 'center',
-          text: '大数据量面积图'
         },
         toolbox: {
           feature: {

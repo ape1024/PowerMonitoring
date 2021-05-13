@@ -48,7 +48,7 @@ export default {
   overflow hidden
   .navTitle
     float left
-    line-height 60px
+    line-height 70px
     color $font-color-white
     font-weight bold
     font-size $font-size-Title

@@ -1,11 +1,11 @@
 <template>
-  <el-row>
-    <!-- 日用电量统计 -->
+  <el-row class="MonthPowerElrow">
+    <!-- 月用电量统计 -->
     <el-col :span="24">
       <Breadcrumb />
       <div class="ElectricityCondition">
         <div class="Condition-module_row">
-          <div class="Condition-module_explain">配电室:</div>
+          <div class="Condition-module_explain">测量位置:</div>
           <div class="Condition-module_content">
             <el-select size="small" v-model="value" filterable placeholder="请选择">
               <el-option
@@ -35,10 +35,26 @@
       </div>
       <div class="powerTable">
         <h4 class="powerTitle">管理员 2021-05-06日 用电量统计报表</h4>
-        <el-table :data="tableData" height="300" border style="width: 100%">
-          <el-table-column prop="date" label="日期" width="180"></el-table-column>
-          <el-table-column prop="name" label="姓名" width="180"></el-table-column>
-          <el-table-column prop="address" label="地址"></el-table-column>
+        <el-table
+          :header-cell-style="{background:'#0068b8',color:'#fff'}"
+          :data="tableData"
+          border
+          style="width: 100%"
+        >
+          <el-table-column align="center" fixed prop="date" label="日期/电量"></el-table-column>
+          <el-table-column align="center" prop="a" label="01" width="120"></el-table-column>
+          <el-table-column align="center" prop="b" label="02" width="120"></el-table-column>
+          <el-table-column align="center" prop="c" label="03" width="120"></el-table-column>
+          <el-table-column align="center" prop="d" label="04" width="120"></el-table-column>
+          <el-table-column align="center" prop="e" label="05" width="120"></el-table-column>
+          <el-table-column align="center" prop="e" label="06" width="120"></el-table-column>
+          <el-table-column align="center" prop="e" label="07" width="120"></el-table-column>
+          <el-table-column align="center" prop="e" label="08" width="120"></el-table-column>
+          <el-table-column align="center" prop="e" label="09" width="120"></el-table-column>
+          <el-table-column align="center" prop="e" label="10" width="120"></el-table-column>
+          <el-table-column align="center" prop="e" label="11" width="120"></el-table-column>
+          <el-table-column align="center" prop="e" label="12" width="120"></el-table-column>
+          <el-table-column align="center" prop="h" label="合计"></el-table-column>
         </el-table>
       </div>
       <div class="lineChart">
@@ -65,46 +81,21 @@ export default {
       tableData: [
         {
           date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄'
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
+          a: '877.23',
+          b: '670.24',
+          c: '457.90',
+          d: '739.20',
+          e: '435.32',
+          h: '2242.51'
         },
         {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
-        },
-        {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
+          date: '2016-05-02',
+          a: '877.23',
+          b: '670.24',
+          c: '457.90',
+          d: '739.20',
+          e: '435.32',
+          h: '242.51'
         }
       ]
     };
@@ -118,65 +109,26 @@ export default {
     drawLine() {
       const myChart = this.$echarts.init(document.getElementById('LineChart'))
       myChart.setOption({
-        title: {
-          text: '折线图堆叠'
+        backgroundColor: '#f2f2f2',
+        legend: {},
+        tooltip: {},
+        dataset: {
+          source: [
+            ['product', '2015', '2016', '2017'],
+            ['Matcha Latte', 43.3, 85.8, 93.7],
+            ['Milk Tea', 83.1, 73.4, 55.1],
+            ['Cheese Cocoa', 86.4, 65.2, 82.5],
+            ['Walnut Brownie', 72.4, 53.9, 39.1]
+          ]
         },
-        tooltip: {
-          trigger: 'axis'
-        },
-        legend: {
-          data: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎']
-        },
-        grid: {
-          left: '3%',
-          right: '4%',
-          bottom: '3%',
-          containLabel: true
-        },
-        toolbox: {
-          feature: {
-            saveAsImage: {}
-          }
-        },
-        xAxis: {
-          type: 'category',
-          boundaryGap: false,
-          data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
-        },
-        yAxis: {
-          type: 'value'
-        },
+        xAxis: { type: 'category' },
+        yAxis: {},
+        // Declare several bar series, each will be mapped
+        // to a column of dataset.source by default.
         series: [
-          {
-            name: '邮件营销',
-            type: 'line',
-            stack: '总量',
-            data: [120, 132, 101, 134, 90, 230, 210]
-          },
-          {
-            name: '联盟广告',
-            type: 'line',
-            stack: '总量',
-            data: [220, 182, 191, 234, 290, 330, 310]
-          },
-          {
-            name: '视频广告',
-            type: 'line',
-            stack: '总量',
-            data: [150, 232, 201, 154, 190, 330, 410]
-          },
-          {
-            name: '直接访问',
-            type: 'line',
-            stack: '总量',
-            data: [320, 332, 301, 334, 390, 330, 320]
-          },
-          {
-            name: '搜索引擎',
-            type: 'line',
-            stack: '总量',
-            data: [820, 932, 901, 934, 1290, 1330, 1320]
-          }
+          { type: 'bar' },
+          { type: 'bar' },
+          { type: 'bar' }
         ]
       })
     }
@@ -187,21 +139,28 @@ export default {
 
 <style scoped lang='stylus'>
 @import '../assets/css/base.styl'
+.MonthPowerElrow
+  box-sizing border-box
+  padding 6px
+  border 1px solid #c6c6c6
+  border-radius 6px
+  height 100%
+  background #fff
 .ElectricityCondition
   display flex
   flex-direction row
   min-width 200px
-  font-size $font-size-Base
+  font-size 14px
   flex-flow row wrap
-  border-bottom 1px solid $border-color-one
+  border 1px solid #c6c6c6
+  border-radius 6px
+  margin-top 6px
 .Condition-module_row
   min-width 200px
   display flex
   flex-direction row
   flex-flow row wrap
-  padding 10px 0
 .Condition-module_explain
-  min-width 80px
   display flex
   padding 0 10px
   align-items center
@@ -218,16 +177,23 @@ export default {
   display flex
   flex-direction row
   flex-flow row wrap
-  padding 10px 0 10px 10px
+  padding 4px 10px 4px 10px
 .powerTable
-  margin 0 0 20px
-  padding 20px 0
-  border-bottom 1px solid $border-color-one
+  margin 6px 0
+  padding 10px
+  border 1px solid #c6c6c6
+  border-radius 6px
   position relative
   overflow hidden
 .powerTitle
   text-align center
-  padding-bottom 20px
+  padding-bottom 10px
   font-size $font-size-large
-  color $font-color-routine
+  font-weight normal
+  color #333
+.lineChart
+  padding 10px 10px 20px 10px
+  box-sizing border-box
+  border-radius 6px
+  border 1px solid #c6c6c6
 </style>

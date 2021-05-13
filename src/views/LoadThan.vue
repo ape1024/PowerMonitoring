@@ -1,11 +1,11 @@
 <template>
-  <el-row>
+  <el-row class="LoadThanElrow">
     <!-- 数据分析 -> 负荷时比 -->
     <el-col :span="24">
       <Breadcrumb />
       <div class="ElectricityCondition">
         <div class="Condition-module_row">
-          <div class="Condition-module_explain">配电室:</div>
+          <div class="Condition-module_explain">测量位置:</div>
           <div class="Condition-module_content">
             <el-select size="small" v-model="value" filterable placeholder="请选择">
               <el-option
@@ -32,12 +32,18 @@
         <div class="Condition-module_row">
           <div class="Condition-module_content">
             <div class="Condition-module_date">
-              <el-button size="small" type="primary">查询</el-button>
+              <el-button size="small" type="primary">
+                <i class="el-icon-search"></i>
+                查询
+              </el-button>
             </div>
           </div>
         </div>
       </div>
-      <div id="LoadThan" :style="{width: '100%', height: '500px'}"></div>
+      <div class="LoadThanWrapper">
+        <h4 class="LoadThanTitle">测试用户A区配 负荷时比分析 (2021-05-11 : 2021-05-12)</h4>
+        <div id="LoadThan" :style="{width: '100%', height: '670px'}"></div>
+      </div>
     </el-col>
   </el-row>
 </template>
@@ -66,6 +72,7 @@ export default {
     drawLine() {
       const myChart = this.$echarts.init(document.getElementById('LoadThan'))
       myChart.setOption({
+        backgroundColor: '#f2f2f2',
         legend: {
           data: ['高度与气温']
         },
@@ -127,18 +134,17 @@ export default {
 .ElectricityCondition
   display flex
   flex-direction row
-  min-width 200px
   font-size $font-size-Base
   flex-flow row wrap
-  border-bottom 1px solid $border-color-one
+  border 1px solid #c6c6c6
+  border-radius 6px
+  margin 6px 0 10px
 .Condition-module_row
-  min-width 200px
   display flex
   flex-direction row
   flex-flow row wrap
-  padding 10px 0
+  padding 4px 0
 .Condition-module_explain
-  min-width 80px
   display flex
   padding 0 10px
   align-items center
@@ -155,5 +161,21 @@ export default {
   display flex
   flex-direction row
   flex-flow row wrap
-  padding 10px 0 10px 10px
+  padding 4px 10px 4px 10px
+.LoadThanElrow
+  box-sizing border-box
+  padding 6px
+  border 1px solid #c6c6c6
+  border-radius 6px
+  height 100%
+  background #fff
+.LoadThanWrapper
+  padding 0 10px 10px
+  border-radius 6px
+  border 1px solid #c6c6c6
+.LoadThanTitle
+  margin 10px 0
+  font-size 18px
+  font-weight normal
+  text-align center
 </style>

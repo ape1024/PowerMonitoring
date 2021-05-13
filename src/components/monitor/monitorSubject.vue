@@ -1,46 +1,133 @@
 <template>
   <el-row>
     <el-col :span="24">
-      <el-table :data="tableData" border style="width: 100%">
-        <el-table-column prop="date" label="日期" width="180"></el-table-column>
-        <el-table-column prop="name" label="姓名" width="180"></el-table-column>
-        <el-table-column prop="address" label="地址"></el-table-column>
+      <el-table
+        :data="tableData"
+        border
+        style="width: 1000px"
+        :row-class-name="tableRowClassName"
+        :header-cell-style="{background:'#0068b8',color:'#fff'}"
+      >
+        <el-table-column align="center" prop="date" label width="180">
+          <template slot-scope="scope">
+            <span @click="tableClick" class="tableSpan">{{scope.row.date}}</span>
+          </template>
+        </el-table-column>
+        <el-table-column align="center" prop="name">
+          <template slot="header" slot-scope="scope">
+            <i class="monitor-table-header" @click="clearAll(scope)">
+              1#进线
+              <br />(501)
+            </i>
+          </template>
+          <template slot-scope="scope">
+            <span @click="tableClick" class="tableSpan">{{scope.row.name}}</span>
+          </template>
+        </el-table-column>
+        <el-table-column align="center" prop="name">
+          <template slot="header" slot-scope="scope">
+            <i class="monitor-table-header" @click="clearAll(scope)">
+              2#进线
+              <br />(501)
+            </i>
+          </template>
+        </el-table-column>
+        <el-table-column align="center" prop="name">
+          <template slot="header" slot-scope="scope">
+            <i class="monitor-table-header" @click="clearAll(scope)">
+              1#变压器出线
+              <br />(501)
+            </i>
+          </template>
+        </el-table-column>
+        <el-table-column align="center" prop="name">
+          <template slot="header" slot-scope="scope">
+            <i class="monitor-table-header" @click="clearAll(scope)">
+              2#变压器出线
+              <br />(501)
+            </i>
+          </template>
+        </el-table-column>
+        <el-table-column align="center" prop="name">
+          <template slot="header" slot-scope="scope">
+            <i class="monitor-table-header" @click="clearAll(scope)">
+              2#变压器出线
+              <br />(501)
+            </i>
+          </template>
+        </el-table-column>
+        <el-table-column align="center" prop="name">
+          <template slot="header" slot-scope="scope">
+            <i class="monitor-table-header" @click="clearAll(scope)">
+              2#变压器出线
+              <br />(501)
+            </i>
+          </template>
+        </el-table-column>
       </el-table>
-      <div v-if="coverLayerSwith" class="coverLayer">
-        <instrument @close="closeInstrument" />
-      </div>
+      <el-row :gutter="20" v-if="coverLayerSwith" class="coverLayer">
+        <el-col :span="12" :offset="6">
+          <instrument @close="closeInstrument" />
+        </el-col>
+      </el-row>
+      <el-row :gutter="20" v-if="brokenSwith" class="coverLayer">
+        <el-col :span="12" :offset="6">
+          <!-- <instrument @close="closeInstrument" /> -->
+          <lineChart @close="closeInstrument" />
+        </el-col>
+      </el-row>
     </el-col>
   </el-row>
 </template>
 
 <script>
 import instrument from './instrument.vue'
+import lineChart from './lineChart.vue'
 
 export default {
   name: 'monitorSubject',
   components: {
-    instrument
+    instrument,
+    lineChart
   },
   data() {
     return {
       coverLayerSwith: false,
+      brokenSwith: false,
       tableData: [
         {
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
+          date: 'U1',
+          name: 'null'
         }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
+          date: 'P1',
+          name: 'null'
         }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄'
+          date: 'W1',
+          name: 'null'
         }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
+          date: 'E1',
+          name: 'null'
+        }, {
+          date: 'Y1',
+          name: 'null'
+        }, {
+          date: 'O1',
+          name: 'null'
+        }, {
+          date: 'Z1',
+          name: 'null'
+        }, {
+          date: 'A1',
+          name: 'null'
+        }, {
+          date: 'B1',
+          name: 'null'
+        }, {
+          date: 'C1',
+          name: 'null'
+        }, {
+          date: 'M1',
+          name: 'null'
         }
       ]
     };
@@ -50,6 +137,25 @@ export default {
   methods: {
     closeInstrument() {
       this.coverLayerSwith = false
+      this.brokenSwith = false
+    },
+    tableClick() {
+      this.coverLayerSwith = true
+    },
+    clearAll(data) {
+      console.log(data)
+      this.brokenSwith = true
+    },
+    tableRowClassName({ rowIndex }) {
+      if (rowIndex <= 2) {
+        console.log('rowIndex ===1')
+        return 'warning-row';
+      } if (rowIndex > 2 && rowIndex <= 5) {
+        return 'success-row';
+      } if (rowIndex > 5) {
+        return 'third-row';
+      }
+      return '';
     }
   },
   created() { }
@@ -60,4 +166,15 @@ export default {
 @import '../../assets/css/base.styl'
 .coverLayer
   coverLayer()
+.monitor-table-header
+  font-style normal
+  transition 0.4s
+  cursor pointer
+.monitor-table-header:hover
+  text-decoration underline
+.tableSpan
+  transition 0.4s
+  cursor pointer
+.tableSpan:hover
+  text-decoration underline
 </style>

@@ -1,29 +1,29 @@
 <template>
-  <el-row>
+  <el-row class="homepageElrow">
     <!-- 首  页 -->
-    <el-col :span="24">
+    <el-col :span="24" class="homepageElcol">
       <!-- 页卡 -->
       <Breadcrumb />
       <!-- 基础信息 -->
       <el-row :gutter="20" class="InformationSubject">
         <el-col :span="6">
           <div class="grid-content bg-purple InformationBox">
-            <exhibiting />
+            <exhibiting :exhibitingMessage="exhibitingMessage" :exhibitingData="exhibitingData" />
           </div>
         </el-col>
         <el-col :span="6">
           <div class="grid-content bg-purple InformationBox">
-            <exhibiting />
+            <exhibiting :exhibitingMessage="exhibitingMessage" :exhibitingData="exhibitingData" />
           </div>
         </el-col>
         <el-col :span="6">
           <div class="grid-content bg-purple InformationBox">
-            <exhibiting />
+            <exhibiting :exhibitingMessage="exhibitingMessage" :exhibitingData="exhibitingData" />
           </div>
         </el-col>
         <el-col :span="6">
           <div class="grid-content bg-purple InformationBox">
-            <exhibiting />
+            <exhibiting :exhibitingMessage="exhibitingMessage" :exhibitingData="exhibitingData" />
           </div>
         </el-col>
       </el-row>
@@ -53,19 +53,53 @@ export default {
     electricity
   },
   data() {
-    return {};
+    return {
+      exhibitingData: {},
+      exhibitingMessage: {}
+    };
   },
   computed: {},
   watch: {},
   methods: {},
-  created() { }
+  created() {
+    this.exhibitingMessage = {
+      title: '基本信息',
+      icon: 'el-icon-document',
+      color: '#00a1e8'
+    }
+    this.exhibitingData = [
+      {
+        key: '配电室',
+        value: '3',
+        unit: '个'
+      }, {
+        key: '变压器',
+        value: '3',
+        unit: '座'
+      }, {
+        key: '总容量',
+        value: '1033',
+        unit: 'kVA'
+      }
+    ]
+  }
 };
 </script>
 
 <style scoped lang='stylus'>
 @import '../assets/css/base.styl'
+.homepageElrow
+  height 100%
+  background #f2f2f2
+.homepageElcol
+  padding 6px
+  height 100%
+  box-sizing border-box
+  border 1px solid #c6c6c6
+  border-radius 6px
+  background #fff
 .InformationSubject
-  margin 20px 0
+  margin 6px 0
   position relative
   overflow hidden
 .InformationBox
@@ -78,6 +112,6 @@ export default {
   border-radius 5px
   border 1px solid $border-color-two
   width 100%
-  margin-top 20px
-  height 360px
+  margin-top 6px
+  height 388px
 </style>

@@ -1,8 +1,9 @@
 <template>
   <el-row>
     <el-col :span="24">
-      <el-tabs v-model="activeName" @tab-click="handleClick">
+      <el-tabs type="card" v-model="activeName" @tab-click="handleClick">
         <el-tab-pane label="北工大软件园A区配" name="first"></el-tab-pane>
+        <el-tab-pane label="北工大软件园B区配" name="firstd"></el-tab-pane>
       </el-tabs>
     </el-col>
   </el-row>

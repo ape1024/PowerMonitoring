@@ -2,68 +2,11 @@
   <el-row class="instrument">
     <el-col :span="24">
       <h4 class="instrumentHeader">
-        表盘数据
+        总功率因数_%--曲线对比分析
         <i @click="close" class="instrumentHeaderclose"></i>
       </h4>
       <div class="instrumentSubject">
-        <h4 class="meterCoverTilte">
-          211:3#变压器出线柜
-          <span class="meterCoverTilteSpan">2021-05-13 13:55:39</span>
-        </h4>
-        <el-row>
-          <el-col :span="24">
-            <div class="meterCoverOne">
-              <el-table
-                :data="tableData"
-                border
-                style="width: 100%"
-                :cell-style="columnStyle"
-                :header-cell-style="{background:'#0068b8',color:'#fff'}"
-              >
-                <el-table-column align="center" prop="date" label="表计参数" :cell-style="columnStyle"></el-table-column>
-                <el-table-column align="center" prop="name" label="总"></el-table-column>
-                <el-table-column align="center" prop="address" label="A相"></el-table-column>
-                <el-table-column align="center" prop="address" label="B相"></el-table-column>
-                <el-table-column align="center" prop="address" label="C相"></el-table-column>
-              </el-table>
-            </div>
-            <div class="meterCoverOne">
-              <el-table
-                :data="tableDataTwo"
-                border
-                style="width: 100%"
-                :header-cell-style="{background:'#0068b8',color:'#fff'}"
-              >
-                <el-table-column
-                  align="center"
-                  prop="date"
-                  label="零序电流(A)"
-                  :cell-style="columnStyle"
-                ></el-table-column>
-                <el-table-column align="center" prop="name" label="频率(HZ)"></el-table-column>
-                <el-table-column align="center" prop="address" label="总电压谐波含量(V)"></el-table-column>
-                <el-table-column align="center" prop="address" label="总电流谐波含量(A)"></el-table-column>
-              </el-table>
-            </div>
-            <div class="meterCoverOne">
-              <el-table
-                :data="tableDataThree"
-                style="width: 100%"
-                :header-cell-style="{background:'#0068b8',color:'#fff'}"
-              >
-                <el-table-column align="center" prop="date" label="参数"></el-table-column>
-                <el-table-column align="center" label="有功(kWh)">
-                  <el-table-column align="center" prop="name" label="正向"></el-table-column>
-                  <el-table-column align="center" prop="province" label="反向"></el-table-column>
-                </el-table-column>
-                <el-table-column align="center" label="无功(kVarh)">
-                  <el-table-column align="center" prop="name" label="正向"></el-table-column>
-                  <el-table-column align="center" prop="province" label="反向"></el-table-column>
-                </el-table-column>
-              </el-table>
-            </div>
-          </el-col>
-        </el-row>
+        <div id="electricity" :style="{width: '100%', height: '360px'}"></div>
       </div>
       <div class="instrumentBottom">
         <el-button @click="close" size="mini">退 出</el-button>
@@ -75,7 +18,7 @@
 <script>
 
 export default {
-  name: 'meterCoverLayer',
+  name: 'meterChart',
   components: {},
   data() {
     return {

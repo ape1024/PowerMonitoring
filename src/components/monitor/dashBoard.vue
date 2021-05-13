@@ -1,7 +1,7 @@
 <template>
   <el-row>
     <el-col :span="24">
-      <div id="dashBoard" :style="{width: '100%', height: '300px'}"></div>
+      <div :id="dashBoardId" :style="{width: '100%', height: '300px'}"></div>
     </el-col>
   </el-row>
 </template>
@@ -9,6 +9,7 @@
 <script>
 export default {
   name: 'dashBoard',
+  props: ['dashBoardId'],
   components: {},
   data() {
     return {};
@@ -20,8 +21,12 @@ export default {
   },
   methods: {
     drawLine() {
-      const myChart = this.$echarts.init(document.getElementById('dashBoard'))
+      const myChart = this.$echarts.init(document.getElementById(this.dashBoardId))
       myChart.setOption({
+        title: {
+          text: '仪表盘',
+          left: 'center'
+        },
         series: [
           {
             type: 'gauge',

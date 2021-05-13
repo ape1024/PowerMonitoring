@@ -11,7 +11,7 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: '/',
-    component: () => import('@/views/Login')
+    component: () => import('@/components/home/Home')
   },
   {
     path: '/Login',
@@ -21,7 +21,7 @@ const routes = [
   {
     path: '/Home',
     name: 'Home',
-    component: () => import('@/views/Home'),
+    component: () => import('@/components/home/Home'),
     children: [
       {
         // 首页

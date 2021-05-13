@@ -1,5 +1,5 @@
 <template>
-  <el-row>
+  <el-row class="AlarmEventsElrow">
     <!-- 报警事件 -->
     <el-col :span="24">
       <Breadcrumb />
@@ -72,7 +72,10 @@
         <div class="Condition-module_row">
           <div class="Condition-module_explain"></div>
           <div class="Condition-module_date">
-            <el-button size="small" type="primary">查询</el-button>
+            <el-button size="small" type="primary">
+              <i class="el-icon-search"></i>
+              查询
+            </el-button>
             <el-button size="small" type="primary">确认所有事件</el-button>
             <el-button size="small" type="primary">
               <i class="el-icon-printer"></i>
@@ -82,14 +85,26 @@
         </div>
       </div>
       <div class="AlarmEventsTable">
-        <el-table height="600" :data="tableData" border style="width: 100%">
-          <el-table-column prop="date" label="日期" width="180"></el-table-column>
-          <el-table-column prop="name" label="姓名" width="180"></el-table-column>
-          <el-table-column prop="address" label="地址"></el-table-column>
+        <el-table
+          height="700"
+          :data="tableData"
+          border
+          style="width: 100%"
+          :header-cell-style="{background:'#0068b8',color:'#fff'}"
+        >
+          <el-table-column align="center" prop="date" label="配电室"></el-table-column>
+          <el-table-column align="center" prop="name" label="设备"></el-table-column>
+          <el-table-column align="center" prop="a" label="发生事件"></el-table-column>
+          <el-table-column align="center" prop="b" label="触发值" width="100"></el-table-column>
+          <el-table-column align="center" prop="c" label="级别" width="100"></el-table-column>
+          <el-table-column align="center" prop="d" label="告警时间" width="160"></el-table-column>
+          <el-table-column align="center" prop="e" label="结束时间" width="160"></el-table-column>
+          <el-table-column align="center" prop="f" label="状态" width="120"></el-table-column>
+          <el-table-column align="center" prop label="操作" width="180"></el-table-column>
         </el-table>
-      </div>
-      <div class="pagingDevice">
-        <el-pagination background layout="prev, pager, next" :total="1000"></el-pagination>
+        <div class="pagingDevice">
+          <el-pagination background layout="prev, pager, next" :total="1000"></el-pagination>
+        </div>
       </div>
     </el-col>
   </el-row>
@@ -111,77 +126,23 @@ export default {
       datetimerange: [],
       tableData: [
         {
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
+          date: '配电室',
+          name: '电机',
+          a: '发生事件',
+          b: '123',
+          c: '1级',
+          d: '2021-01-01 10:00:00',
+          e: '2021-01-02 10:00:00',
+          f: '报警'
         }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄'
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
+          date: '配电室',
+          name: '电机',
+          a: '发生事件',
+          b: '123',
+          c: '1级',
+          d: '2021-01-01 10:00:00',
+          e: '2021-01-02 10:00:00',
+          f: '报警'
         }
       ]
     }
@@ -195,21 +156,28 @@ export default {
 
 <style scoped lang='stylus'>
 @import '../assets/css/base.styl'
+.AlarmEventsElrow
+  box-sizing border-box
+  padding 6px
+  border 1px solid #c6c6c6
+  border-radius 6px
+  height 100%
+  background #fff
 .ElectricityCondition
   display flex
   flex-direction row
   min-width 200px
   font-size $font-size-Base
   flex-flow row wrap
-  border-bottom 1px solid $border-color-one
+  border 1px solid #c6c6c6
+  border-radius 6px
+  margin-top 6px
 .Condition-module_row
   min-width 200px
   display flex
   flex-direction row
   flex-flow row wrap
-  padding 10px 0
 .Condition-module_explain
-  min-width 80px
   display flex
   padding 0 10px
   align-items center
@@ -226,11 +194,15 @@ export default {
   display flex
   flex-direction row
   flex-flow row wrap
-  padding 10px 0 10px 10px
+  padding 4px 10px 4px 10px
 .AlarmEventsTable
   position relative
   overflow hidden
-  padding 20px 0
+  border 1px solid #c6c6c6
+  border-radius 6px
+  padding 10px
+  margin-top 6px
 .pagingDevice
+  margin-top 10px
   text-align center
 </style>

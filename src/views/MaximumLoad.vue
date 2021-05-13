@@ -1,5 +1,5 @@
 <template>
-  <el-row>
+  <el-row class="MaximumLoadElrow">
     <!-- 数据分析 -> 最大负荷 -->
     <el-col :span="24">
       <Breadcrumb />
@@ -43,7 +43,10 @@
             ></el-date-picker>
           </div>
           <div class="Condition-module_date">
-            <el-button size="small" type="primary">查询</el-button>
+            <el-button size="small" type="primary">
+              <i class="el-icon-search"></i>
+              查询
+            </el-button>
           </div>
         </div>
       </div>
@@ -81,21 +84,27 @@ export default {
 
 <style scoped lang='stylus'>
 @import '../assets/css/base.styl'
+.MaximumLoadElrow
+  box-sizing border-box
+  padding 6px
+  border 1px solid #c6c6c6
+  border-radius 6px
+  height 100%
+  background #fff
 .ElectricityCondition
   display flex
   flex-direction row
-  min-width 200px
   font-size $font-size-Base
   flex-flow row wrap
-  border-bottom 1px solid $border-color-one
+  border 1px solid #c6c6c6
+  border-radius 6px
+  margin 6px 0 10px
 .Condition-module_row
-  min-width 200px
   display flex
   flex-direction row
   flex-flow row wrap
-  padding 10px 0
+  padding 4px 0
 .Condition-module_explain
-  min-width 80px
   display flex
   padding 0 10px
   align-items center
@@ -112,7 +121,7 @@ export default {
   display flex
   flex-direction row
   flex-flow row wrap
-  padding 10px 0 10px 10px
+  padding 4px 10px 4px 10px
 .curveGraph
   padding 20px 0
   overflow hidden

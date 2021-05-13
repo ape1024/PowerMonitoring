@@ -9,12 +9,12 @@
       </div>
       <!-- echarts -->
       <el-row :gutter="20" class="histogramContent">
-        <el-col :span="20">
+        <el-col :span="21">
           <div class="grid-content bg-purple">
             <div id="histogram" :style="{width: '100%', height: '240px'}"></div>
           </div>
         </el-col>
-        <el-col :span="4">
+        <el-col :span="3">
           <div class="grid-content bg-purple">
             <div class="numericalDisplay_top">
               <h4 class="numericalDisplay_tit">今日负荷</h4>
@@ -167,7 +167,8 @@ export default {
 .histogramHead
   height 30px
   line-height 30px
-  font-size $font-size-Medium
+  font-weight bold
+  font-size $font-size-Base
   color $font-color-white
   width 100%
   text-indent 2em
@@ -178,44 +179,42 @@ export default {
   padding 10px 20px
 .numericalDisplay_top
   overflow hidden
-  padding 0 40px
-  text-align center
+  text-align left
 .numericalDisplay_bottom
-  margin-top 30px
+  margin-top 10px
   overflow hidden
-  padding 0 40px
-  text-align center
+  text-align left
 .numericalDisplay_tit
-  font-size $font-size-ExtraLarge
+  font-size 22px
   color $font-color-Brand
   margin-bottom 10px
   width 100%
 .numericalDisplay_value
   width 100%
   display flex
-  font-size $font-size-ExtraLarge
-  color $font-color-Brand
+  font-size 20px
+  color #0068b8
   font-weight bolder
   margin-bottom 4px
 .numericalDisplay_value_text
   color $font-color-Success
-  font-size $font-size-ExtraLarge
+  font-size 24px
   font-weight bold
-  flex 1
   text-align right
 .numericalDisplay_value_unit
   width 40px
-  font-size $font-size-large
+  margin-top 8px
+  font-size 14px
   overflow hidden
-  color $font-color-secondary
+  color #333
   vertical-align bottom
 .numericalDisplay_icon
   font-size 26px
+  margin 2px 2px 0 0
 .numericalDisplay_value_textTwo
   color $font-color-main
-  font-size $font-size-ExtraLarge
+  font-size 22px
   font-weight bold
-  flex 1
   text-align right
   padding-right 10px
 </style>
