@@ -63,15 +63,16 @@ export default {
 </script>
 
 <style scoped lang='stylus'>
+@import '../assets/css/base.styl'
 .TabControlArea
   border-radius 6px
   margin-top 6px
-  border 1px solid #c6c6c6
+  border 1px solid $border-color-one
 .monitorElrow
-  background #fff
+  background $background-color-White
   height 100%
   padding 6px
-  border 1px solid #c6c6c6
+  border 1px solid $border-color-one
   border-radius 6px
   box-sizing border-box
 .TabControl

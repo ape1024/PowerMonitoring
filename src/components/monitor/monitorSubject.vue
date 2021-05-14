@@ -65,17 +65,21 @@
           </template>
         </el-table-column>
       </el-table>
-      <el-row :gutter="20" v-if="coverLayerSwith" class="coverLayer">
-        <el-col :span="12" :offset="6">
-          <instrument @close="closeInstrument" />
-        </el-col>
-      </el-row>
-      <el-row :gutter="20" v-if="brokenSwith" class="coverLayer">
-        <el-col :span="12" :offset="6">
-          <!-- <instrument @close="closeInstrument" /> -->
-          <lineChart @close="closeInstrument" />
-        </el-col>
-      </el-row>
+      <div v-if="coverLayerSwith" class="coverLayer">
+        <div class="coverLayerDiv">
+          <vue-drag-resize :isResizable="false">
+            <instrument @close="closeInstrument" />
+          </vue-drag-resize>
+        </div>
+      </div>
+
+      <div v-if="brokenSwith" class="coverLayer">
+        <div class="coverLayerDiv">
+          <vue-drag-resize :isResizable="false">
+            <lineChart @close="closeInstrument" />
+          </vue-drag-resize>
+        </div>
+      </div>
     </el-col>
   </el-row>
 </template>
@@ -177,4 +181,9 @@ export default {
   cursor pointer
 .tableSpan:hover
   text-decoration underline
+.coverLayerDiv
+  position absolute
+  top 200px
+  left 50%
+  margin-left -400px
 </style>

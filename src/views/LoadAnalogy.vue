@@ -1,24 +1,11 @@
 <template>
-  <el-row>
+  <el-row class="LoadAnalogyElrow">
     <!-- 数据分析 -> 负荷类比 -->
     <el-col :span="24">
       <Breadcrumb />
       <div class="ElectricityCondition">
         <div class="Condition-module_row">
-          <div class="Condition-module_explain">配电室:</div>
-          <div class="Condition-module_content">
-            <el-select size="small" v-model="value" filterable placeholder="请选择">
-              <el-option
-                v-for="item in options"
-                :key="item.value"
-                :label="item.label"
-                :value="item.value"
-              ></el-option>
-            </el-select>
-          </div>
-        </div>
-        <div class="Condition-module_row">
-          <div class="Condition-module_explain">配电室:</div>
+          <div class="Condition-module_explain">测量位置:</div>
           <div class="Condition-module_content">
             <el-select size="small" v-model="value" filterable placeholder="请选择">
               <el-option
@@ -52,6 +39,7 @@
       </div>
       <!-- curveGraph -->
       <div class="curveGraph">
+        <h4 class="curveGraphTitle">(测试用户) 负荷类比分析 (2021-05-12 至 2021-05-13)</h4>
         <LineChart />
       </div>
     </el-col>
@@ -84,21 +72,27 @@ export default {
 
 <style scoped lang='stylus'>
 @import '../assets/css/base.styl'
+.LoadAnalogyElrow
+  box-sizing border-box
+  padding 6px
+  border 1px solid $border-color-one
+  border-radius 6px
+  height 100%
+  background $background-color-White
 .ElectricityCondition
+  margin 6px 0 10px
   display flex
   flex-direction row
-  min-width 200px
   font-size $font-size-Base
   flex-flow row wrap
-  border-bottom 1px solid $border-color-one
+  border 1px solid $border-color-one
+  border-radius 6px
 .Condition-module_row
-  min-width 200px
   display flex
   flex-direction row
   flex-flow row wrap
-  padding 10px 0
+  padding 4px 0
 .Condition-module_explain
-  min-width 80px
   display flex
   padding 0 10px
   align-items center
@@ -117,6 +111,13 @@ export default {
   flex-flow row wrap
   padding 4px 10px 4px 10px
 .curveGraph
-  padding 20px 0
+  border 1px solid $border-color-one
+  border-radius 6px
+  padding 0 10px 10px
   overflow hidden
+.curveGraphTitle
+  margin 10px 0
+  font-size 18px
+  font-weight normal
+  text-align center
 </style>

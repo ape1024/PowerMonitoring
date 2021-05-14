@@ -95,9 +95,8 @@ export default {
   padding 6px
   height 100%
   box-sizing border-box
-  border 1px solid #c6c6c6
-  border-radius 6px
-  background #fff
+  Allborder()
+  background $background-color-White
 .InformationSubject
   margin 6px 0
   position relative
@@ -109,9 +108,7 @@ export default {
 .loadCondition
   overflow hidden
   position relative
-  border-radius 5px
-  border 1px solid $border-color-two
+  Allborder()
   width 100%
   margin-top 6px
-  height 388px
 </style>

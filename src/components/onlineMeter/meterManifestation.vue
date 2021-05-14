@@ -584,11 +584,13 @@
           <el-button @click="getBackFn" size="large" type="primary">{{getBack}}</el-button>
         </div>
       </div>
-      <el-row :gutter="20" v-if="coverSiwth" class="coverLayer">
-        <el-col :span="12" :offset="6">
-          <meterCoverLayer @close="closeFn" />
-        </el-col>
-      </el-row>
+      <div v-if="coverSiwth" class="coverLayer">
+        <div class="coverLayerDiv">
+          <vue-drag-resize :isResizable="false">
+            <meterCoverLayer @close="closeFn" />
+          </vue-drag-resize>
+        </div>
+      </div>
     </el-col>
   </el-row>
 </template>
@@ -737,11 +739,10 @@ export default {
 <style scoped lang='stylus'>
 @import '../../assets/css/base.styl'
 .meterManifestationElrow
-  border 1px solid #c6c6c6
-  border-radius 6px
+  Allborder()
   padding 6px
   box-sizing border-box
-  background #fff
+  background $background-color-White
   height 100%
 .meterManifestationElcol
   height 100%
@@ -749,8 +750,7 @@ export default {
   border-radius 6px
   margin 6px 0 0 !important
   padding 6px
-  box-sizing border-box
-  border 1px solid #c6c6c6
+  Allborder()
 .coverLayer
   coverLayer()
 .tableSpan
@@ -758,15 +758,14 @@ export default {
   color $font-color-Brand
   text-decoration underline
 .meterManifestationContent
-  border-radius 6px
   overflow hidden
-  border 1px solid #c6c6c6
+  Allborder()
 .meterManifestationContentTitle
   font-weight normal
   text-align center
   font-size 16px
-  color #fff
-  background #0068b8
+  color $font-color-white
+  background $font-color-Brand
 .meterManifestationTimeline
   overflow hidden
 .meterManifestationSubjectCol
@@ -821,4 +820,9 @@ export default {
   background-size 52px 26px
 .selectedStyle
   background-color #dfedf9
+.coverLayerDiv
+  position absolute
+  top 100px
+  left 50%
+  margin-left -600px
 </style>

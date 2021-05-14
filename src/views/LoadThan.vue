@@ -136,7 +136,7 @@ export default {
   flex-direction row
   font-size $font-size-Base
   flex-flow row wrap
-  border 1px solid #c6c6c6
+  border 1px solid $border-color-one
   border-radius 6px
   margin 6px 0 10px
 .Condition-module_row
@@ -165,14 +165,14 @@ export default {
 .LoadThanElrow
   box-sizing border-box
   padding 6px
-  border 1px solid #c6c6c6
+  border 1px solid $border-color-one
   border-radius 6px
   height 100%
-  background #fff
+  background $background-color-White
 .LoadThanWrapper
   padding 0 10px 10px
   border-radius 6px
-  border 1px solid #c6c6c6
+  border 1px solid $border-color-one
 .LoadThanTitle
   margin 10px 0
   font-size 18px

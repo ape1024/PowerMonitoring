@@ -11,7 +11,7 @@
       <el-row :gutter="20" class="histogramContent">
         <el-col :span="21">
           <div class="grid-content bg-purple">
-            <div id="histogram" :style="{width: '100%', height: '240px'}"></div>
+            <div id="histogram" :style="{width: '100%', height: '230px'}"></div>
           </div>
         </el-col>
         <el-col :span="3">
@@ -193,7 +193,7 @@ export default {
   width 100%
   display flex
   font-size 20px
-  color #0068b8
+  color $font-color-Brand
   font-weight bolder
   margin-bottom 4px
 .numericalDisplay_value_text
@@ -204,7 +204,7 @@ export default {
 .numericalDisplay_value_unit
   width 40px
   margin-top 8px
-  font-size 14px
+  font-size $font-size-Base
   overflow hidden
   color #333
   vertical-align bottom

@@ -44,7 +44,7 @@
           </div>
         </div>
         <div class="Condition-module_row">
-          <div class="Condition-module_explain">类别:</div>
+          <div class="Condition-module_explain">是否确认:</div>
           <div class="Condition-module_content">
             <el-select size="small" v-model="value" filterable placeholder="请选择">
               <el-option
@@ -86,7 +86,7 @@
       </div>
       <div class="AlarmEventsTable">
         <el-table
-          height="700"
+          height="680"
           :data="tableData"
           border
           style="width: 100%"
@@ -157,21 +157,15 @@ export default {
 <style scoped lang='stylus'>
 @import '../assets/css/base.styl'
 .AlarmEventsElrow
-  box-sizing border-box
-  padding 6px
-  border 1px solid #c6c6c6
-  border-radius 6px
-  height 100%
-  background #fff
+  PackageBox()
 .ElectricityCondition
+  padding 4px 0 0
   display flex
   flex-direction row
-  min-width 200px
   font-size $font-size-Base
   flex-flow row wrap
-  border 1px solid #c6c6c6
-  border-radius 6px
   margin-top 6px
+  Allborder()
 .Condition-module_row
   min-width 200px
   display flex
@@ -198,7 +192,7 @@ export default {
 .AlarmEventsTable
   position relative
   overflow hidden
-  border 1px solid #c6c6c6
+  border 1px solid $border-color-one
   border-radius 6px
   padding 10px
   margin-top 6px

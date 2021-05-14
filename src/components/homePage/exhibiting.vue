@@ -54,7 +54,7 @@ export default {
   width 100%
   .exhibiting_left
     background-color #f2f2f2
-    color #0068b8
+    color $font-color-Brand
     flex 1
     font-weight bold
     line-height 30px

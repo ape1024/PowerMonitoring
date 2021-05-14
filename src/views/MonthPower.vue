@@ -142,21 +142,19 @@ export default {
 .MonthPowerElrow
   box-sizing border-box
   padding 6px
-  border 1px solid #c6c6c6
+  border 1px solid $border-color-one
   border-radius 6px
   height 100%
-  background #fff
+  background $background-color-White
 .ElectricityCondition
   display flex
   flex-direction row
-  min-width 200px
-  font-size 14px
+  font-size $font-size-Base
   flex-flow row wrap
-  border 1px solid #c6c6c6
+  border 1px solid $border-color-one
   border-radius 6px
   margin-top 6px
 .Condition-module_row
-  min-width 200px
   display flex
   flex-direction row
   flex-flow row wrap
@@ -181,7 +179,7 @@ export default {
 .powerTable
   margin 6px 0
   padding 10px
-  border 1px solid #c6c6c6
+  border 1px solid $border-color-one
   border-radius 6px
   position relative
   overflow hidden
@@ -195,5 +193,5 @@ export default {
   padding 10px 10px 20px 10px
   box-sizing border-box
   border-radius 6px
-  border 1px solid #c6c6c6
+  border 1px solid $border-color-one
 </style>

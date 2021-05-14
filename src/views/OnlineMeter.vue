@@ -10,7 +10,7 @@
       <el-row class="OnlineMeterElrow">
         <el-col :span="24">
           <el-row :gutter="20">
-            <el-col @click.native="meterClick" :span="6" class="meterList_Li">
+            <el-col @click.native="meterClick" :span="4.8" class="meterList_Li">
               <div class="meterListLeft">北工大软件园A1</div>
               <div class="meterListRight">
                 <div class="meterCircle">
@@ -19,7 +19,7 @@
                 </div>
               </div>
             </el-col>
-            <el-col @click.native="meterClick" :span="6" class="meterList_Li">
+            <el-col @click.native="meterClick" :span="4.8" class="meterList_Li">
               <div class="meterListLeft">北工大软件园B</div>
               <div class="meterListRight">
                 <div class="meterCircle">
@@ -28,7 +28,7 @@
                 </div>
               </div>
             </el-col>
-            <el-col @click.native="meterClick" :span="6" class="meterList_Li">
+            <el-col @click.native="meterClick" :span="4.8" class="meterList_Li">
               <div class="meterListLeft">北工大软件园B</div>
               <div class="meterListRight">
                 <div class="meterCircle">
@@ -37,7 +37,7 @@
                 </div>
               </div>
             </el-col>
-            <el-col @click.native="meterClick" :span="6" class="meterList_Li">
+            <el-col @click.native="meterClick" :span="4.8" class="meterList_Li">
               <div class="meterListLeft">北工大软件园B</div>
               <div class="meterListRight">
                 <div class="meterCircle">
@@ -46,7 +46,7 @@
                 </div>
               </div>
             </el-col>
-            <el-col @click.native="meterClick" :span="6" class="meterList_Li">
+            <el-col @click.native="meterClick" :span="4.8" class="meterList_Li">
               <div class="meterListLeft">北工大软件园B</div>
               <div class="meterListRight">
                 <div class="meterCircle">
@@ -55,7 +55,7 @@
                 </div>
               </div>
             </el-col>
-            <el-col @click.native="meterClick" :span="6" class="meterList_Li">
+            <el-col @click.native="meterClick" :span="4.8" class="meterList_Li">
               <div class="meterListLeft">北工大软件园B</div>
               <div class="meterListRight">
                 <div class="meterCircle">
@@ -103,18 +103,17 @@ export default {
   font-weight normal
   font-size 26px
 .meterList_Li
-  width 350px
   height 145px
   cursor pointer
   margin-bottom 20px
-  color #0068b8
+  color $font-color-Brand
   border-radius 10px
   display flex
   overflow hidden
   flex-direction row
   flex-flow row wrap
 .meterListLeft
-  width 180px
+  width 178px
   line-height 145px
   text-align center
   height 100%
@@ -125,7 +124,7 @@ export default {
   text-align center
   background #f9f9f9
   height 100%
-  width 140px
+  width 135px
   .meterCircle
     display flex
     margin 10px auto 0
@@ -148,12 +147,10 @@ export default {
   vertical-align middle
 .OnlineMeterElrow
   padding 6px
-  border-radius 6px
-  border 1px solid #c6c6c6
+  Allborder()
 .onlineElrow
   padding 6px
-  border-radius 6px
-  border 1px solid #c6c6c6
-  background #fff
+  Allborder()
+  background $background-color-White
   height 100%
 </style>

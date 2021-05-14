@@ -179,18 +179,16 @@ export default {
 .ElectricityCustomElrow
   box-sizing border-box
   padding 6px
-  border 1px solid #c6c6c6
-  border-radius 6px
+  Allborder()
   height 100%
-  background #fff
+  background $background-color-White
 .ElectricityCondition
   display flex
   flex-direction row
   min-width 200px
   font-size $font-size-Base
   flex-flow row wrap
-  border 1px solid #c6c6c6
-  border-radius 6px
+  Allborder()
 .TabControl
   overflow hidden
   box-sizing content-box
@@ -230,16 +228,14 @@ export default {
 .pieChartCol
   padding 0 10px
   margin-top 10px
-  border-radius 6px
-  border 1px solid #c6c6c6
+  Allborder()
 .ElectricityConditionWrapper
   box-sizing border-box
   padding 0 10px
   overflow hidden
 .electricityTableWrapper
-  border-radius 6px
   padding 6px
-  border 1px solid #c6c6c6
+  Allborder()
 .pieChartElrow
   padding 0 10px
 </style>

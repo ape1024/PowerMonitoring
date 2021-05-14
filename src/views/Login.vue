@@ -54,7 +54,7 @@ export default {
     position relative
     overflow hidden
     background url('../assets/img/loginBackgroundImgs.jpg')
-    background-color #0068b8
+    background-color $font-color-Brand
     background-position center
     background-repeat no-repeat
     .UserLogin

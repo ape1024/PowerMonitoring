@@ -93,17 +93,15 @@ export default {
 .OperatingDataElrow
   box-sizing border-box
   padding 6px
-  border 1px solid #c6c6c6
-  border-radius 6px
+  Allborder()
   height 100%
-  background #fff
+  background $background-color-White
 .ElectricityCondition
   display flex
   flex-direction row
-  min-width 200px
-  font-size 14px
+  font-size $font-size-Base
   flex-flow row wrap
-  border 1px solid #c6c6c6
+  border 1px solid $border-color-one
   margin-top 6px
   border-radius 6px
 .Condition-module_row
@@ -118,12 +116,10 @@ export default {
   color $font-color-main
   height 100%
 .Condition-module_content
-  min-width 150px
   align-items center
   justify-content flex-start
   display flex
 .Condition-module_date
-  min-width 300px
   display flex
   flex-direction row
   flex-flow row wrap
@@ -133,6 +129,5 @@ export default {
   overflow hidden
   box-sizing border-box
   padding 6px
-  border 1px solid #c6c6c6
-  border-radius 6px
+  Allborder()
 </style>

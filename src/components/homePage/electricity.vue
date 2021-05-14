@@ -15,7 +15,7 @@
       <el-row :gutter="20" class="histogramContent">
         <el-col :span="21">
           <div class="grid-content bg-purple">
-            <div id="electricity" :style="{width: '100%', height: '360px'}"></div>
+            <div id="electricity" :style="{width: '100%', height: '230px'}"></div>
           </div>
         </el-col>
         <el-col :span="3">
@@ -88,10 +88,10 @@ export default {
           }
         },
         grid: {
-          top: '20%',
+          top: '16%',
           left: '2%',
           right: '2%',
-          bottom: '20%',
+          bottom: '2%',
           containLabel: true
         },
         legend: {
@@ -191,7 +191,7 @@ export default {
   width 100%
   display flex
   font-size 20px
-  color #0068b8
+  color $font-color-Brand
   font-weight bolder
   margin-bottom 4px
 .numericalDisplay_value_text
@@ -202,7 +202,7 @@ export default {
 .numericalDisplay_value_unit
   width 40px
   margin-top 8px
-  font-size 14px
+  font-size $font-size-Base
   overflow hidden
   color #333
   vertical-align bottom

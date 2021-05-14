@@ -85,5 +85,5 @@ export default {
 <style scoped lang='stylus'>
 .pieChart
   margin 20px 0
-  border 1px solid #c6c6c6
+  border 1px solid $border-color-one
 </style>

@@ -32,11 +32,14 @@
           </el-table>
         </el-main>
       </el-container>
-      <el-row :gutter="20" v-if="coverSiwth" class="coverLayer">
-        <el-col :span="12" :offset="6">
-          <controllerGraph @close="closeFn" />
-        </el-col>
-      </el-row>
+
+      <div v-if="coverSiwth" class="coverLayer">
+        <div class="coverLayerDiv">
+          <vue-drag-resize :isResizable="false">
+            <controllerGraph @close="closeFn" />
+          </vue-drag-resize>
+        </div>
+      </div>
     </el-col>
   </el-row>
 </template>
@@ -155,22 +158,18 @@ export default {
 .controllerSwitchingElrow
   box-sizing border-box
   padding 6px
-  border 1px solid #c6c6c6
-  border-radius 6px
   height 100%
-  background #fff
+  background $background-color-White
+  Allborder()
 .cotrollerElcol
   min-height 700px
-  border 1px solid
   margin-top 6px
   padding 8px 0
-  border-radius 6px
-  border-color #c6c6c6
+  Allborder()
 .controllerAside
   padding 10px 4px 0
-  border-radius 6px
   margin-left 6px
-  border 1px solid #c6c6c6
+  Allborder()
 .controllerTitle
   text-align center
   background $font-color-Brand
@@ -199,4 +198,9 @@ export default {
   tableSpan()
 .tableSpan:hover
   text-decoration underline
+.coverLayerDiv
+  position absolute
+  top 200px
+  left 50%
+  margin-left -400px
 </style>

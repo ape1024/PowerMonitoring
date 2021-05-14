@@ -62,11 +62,10 @@ export default {
 @import '../../assets/css/base.styl'
 .instrument
   overflow hidden
-  width 100%
+  width 800px
   border-radius 4px
   padding 5px
   box-sizing content-box
-  margin 250px 0 0 0
   background #e0ecff
 .instrumentHeader
   position relative
@@ -75,7 +74,7 @@ export default {
   margin-bottom 4px
   border-bottom 1px solid #dcdfe6
   text-align left
-  font-size 16px
+  font-size 14px
   color #0E2D5F
 .instrumentBottom
   border 1px solid
@@ -87,6 +86,7 @@ export default {
   border-color #dddddd #95B8E7 #95B8E7 #95B8E7
 .instrumentSubject
   width 100%
+  padding-top 10px
   position relative
   overflow hidden
   background-color #F0FCFF

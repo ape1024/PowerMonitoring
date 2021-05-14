@@ -88,17 +88,15 @@ export default {
 .HistoricalDataElrow
   box-sizing border-box
   padding 6px
-  border 1px solid #c6c6c6
-  border-radius 6px
+  Allborder()
   height 100%
-  background #fff
+  background $background-color-White
 .ElectricityCondition
   display flex
   flex-direction row
   font-size $font-size-Base
   flex-flow row wrap
-  border 1px solid #c6c6c6
-  border-radius 6px
+  Allborder()
   margin 6px 0 10px
 .Condition-module_row
   display flex
@@ -126,8 +124,7 @@ export default {
 .curveGraph
   padding 0 10px 10px
   overflow hidden
-  border 1px solid #c6c6c6
-  border-radius 6px
+  Allborder()
 .curveGraphTitle
   margin 10px 0
   font-size 18px

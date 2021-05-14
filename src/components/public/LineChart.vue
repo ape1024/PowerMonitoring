@@ -1,7 +1,7 @@
 <template>
   <el-row>
     <el-col :span="24">
-      <div id="LineChart" :style="{width: '100%', height: '500px'}"></div>
+      <div id="LineChart" :style="{width: '100%', height: '670px'}"></div>
     </el-col>
   </el-row>
 </template>
@@ -22,6 +22,7 @@ export default {
     drawLine() {
       const myChart = this.$echarts.init(document.getElementById('LineChart'))
       myChart.setOption({
+        backgroundColor: '#f2f2f2',
         xAxis: {
           type: 'category',
           data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']

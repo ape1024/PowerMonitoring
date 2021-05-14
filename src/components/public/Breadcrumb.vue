@@ -28,6 +28,6 @@ export default {
 @import '../../assets/css/base.styl'
 .Breadcrumb
   border-radius 5px
-  border 1px solid #c6c6c6
+  border 1px solid $border-color-one
   padding 7px 10px
 </style>

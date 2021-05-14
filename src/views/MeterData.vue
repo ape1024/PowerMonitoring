@@ -53,12 +53,13 @@
           </el-row>
         </el-main>
       </el-container>
-      <el-row :gutter="20" v-if="coverSiwth" class="coverLayer">
-        <el-col :span="8" :offset="8">
-          <!-- <controllerGraph @close="closeFn" /> -->
-          <meterChart @close="closeFn" />
-        </el-col>
-      </el-row>
+      <div v-if="coverSiwth" class="coverLayer">
+        <div class="coverLayerDiv">
+          <vue-drag-resize :isResizable="false">
+            <meterChart @close="closeFn" />
+          </vue-drag-resize>
+        </div>
+      </div>
     </el-col>
   </el-row>
 </template>
@@ -278,22 +279,22 @@ export default {
 .controllerSwitchingElrow
   box-sizing border-box
   padding 6px
-  border 1px solid #c6c6c6
+  border 1px solid $border-color-one
   border-radius 6px
   height 100%
-  background #fff
+  background $background-color-White
 .cotrollerElcol
   min-height 700px
   border 1px solid
   margin-top 6px
   padding 8px 0
   border-radius 6px
-  border-color #c6c6c6
+  border-color $border-color-one
 .controllerAside
   padding 10px 4px 0
   border-radius 6px
   margin-left 6px
-  border 1px solid #c6c6c6
+  border 1px solid $border-color-one
 .controllerTitle
   position relative
   overflow hidden
@@ -331,4 +332,9 @@ export default {
   background-position center
 .controllerSpan
   float left
+.coverLayerDiv
+  position absolute
+  top 200px
+  left 50%
+  margin-left -300px
 </style>

@@ -5,20 +5,7 @@
       <Breadcrumb />
       <div class="ElectricityCondition">
         <div class="Condition-module_row">
-          <div class="Condition-module_explain">配电室:</div>
-          <div class="Condition-module_content">
-            <el-select size="small" v-model="value" filterable placeholder="请选择">
-              <el-option
-                v-for="item in options"
-                :key="item.value"
-                :label="item.label"
-                :value="item.value"
-              ></el-option>
-            </el-select>
-          </div>
-        </div>
-        <div class="Condition-module_row">
-          <div class="Condition-module_explain">配电室:</div>
+          <div class="Condition-module_explain">测量位置:</div>
           <div class="Condition-module_content">
             <el-select size="small" v-model="value" filterable placeholder="请选择">
               <el-option
@@ -52,6 +39,7 @@
       </div>
       <!-- curveGraph -->
       <div class="curveGraph">
+        <h4 class="curveGraphTitle">测试用户A区配 最大负荷分析</h4>
         <TimelineChart />
       </div>
     </el-col>
@@ -87,16 +75,16 @@ export default {
 .MaximumLoadElrow
   box-sizing border-box
   padding 6px
-  border 1px solid #c6c6c6
+  border 1px solid $border-color-one
   border-radius 6px
   height 100%
-  background #fff
+  background $background-color-White
 .ElectricityCondition
   display flex
   flex-direction row
   font-size $font-size-Base
   flex-flow row wrap
-  border 1px solid #c6c6c6
+  border 1px solid $border-color-one
   border-radius 6px
   margin 6px 0 10px
 .Condition-module_row
@@ -123,6 +111,13 @@ export default {
   flex-flow row wrap
   padding 4px 10px 4px 10px
 .curveGraph
-  padding 20px 0
+  border 1px solid $border-color-one
+  border-radius 6px
+  padding 0 10px 10px
   overflow hidden
+.curveGraphTitle
+  margin 10px 0
+  font-size 18px
+  font-weight normal
+  text-align center
 </style>

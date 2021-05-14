@@ -68,7 +68,7 @@
         </div>
       </div>
       <el-col :span="24" class="lineChart">
-        <div id="Electricity" :style="{width: '100%', height: '350px'}"></div>
+        <div id="Electricity" :style="{width: '100%', height: '370px'}"></div>
       </el-col>
       <el-row :gutter="20">
         <el-col :span="12">
@@ -158,18 +158,16 @@ export default {
 .ElectricityStatisticsElrow
   box-sizing border-box
   padding 6px
-  border 1px solid #c6c6c6
-  border-radius 6px
+  Allborder()
   height 100%
-  background #fff
+  background $background-color-White
 .ElectricityCondition
   margin-top 6px
   display flex
   flex-direction row
   font-size $font-size-Base
   flex-flow row wrap
-  border 1px solid $border-color-one
-  border-radius 6px
+  Allborder()
 .Condition-module_row
   min-width 200px
   display flex
@@ -223,6 +221,5 @@ export default {
 .pieChartCol
   padding 0 10px
   margin-top 10px
-  border-radius 6px
-  border 1px solid #c6c6c6
+  Allborder()
 </style>

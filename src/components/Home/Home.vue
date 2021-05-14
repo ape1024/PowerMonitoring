@@ -8,7 +8,7 @@
         </el-header>
         <el-container class="homeContainer">
           <el-aside class="home-el-aside" width="200px">
-            <NavMenu :authsData="authsData" />
+            <NavMenu :authsData="authsData" @auths="getAuths" />
           </el-aside>
           <el-main class="HomeElmain">
             <router-view />
@@ -36,6 +36,7 @@ export default {
       token: '',
       userName: '',
       clientId: '',
+      routersOne: '',
       authsData: {}
     }
   },
@@ -46,6 +47,11 @@ export default {
     ...mapState('variable', ['tokenData'])
   },
   methods: {
+    getAuths(data) {
+      console.log(data)
+      const router = this.$route.path.substr(1) ? this.$route.path.substr(1) : 'HomePage'
+      this.$router.push(`/${router}`)
+    },
     // async / await
     async getInformation() {
       try {
@@ -56,6 +62,8 @@ export default {
         sessionStorage.setItem('userName', this.userName)
         const data = await userDimension(this.clientId, this.userName)
         this.authsData = data.data.auths
+        //  默认去拿第0个  用户初次跳转页面
+        this.routersOne = data.data.auths.routers && data.data.auths.routers.length ? data.data.auths.routers[0] : ''
       } catch (e) {
         console.log(e)
       }
@@ -89,13 +97,13 @@ export default {
   },
   created() {
     // this.getLocation()
-    const router = this.$route.path.substr(1) ? this.$route.path.substr(1) : 'HomePage'
     console.log(this.$route.query)
-    this.token = '0f30a792-0af1-4bf3-b7c6-18cbc5f6d1b3'
+    this.token = '62c17e58-f81a-43b2-a6d6-77c0fd62ba55'
     this.$store.commit('variable/setToken', this.token)
     sessionStorage.setItem('token', this.token)
-    this.$router.push(`/${router}`)
     this.getInformation()
+    const router = this.$route.path.substr(1) ? this.$route.path.substr(1) : this.routersOne
+    this.$router.push(`/${router}`)
   }
 }
 </script>
@@ -120,14 +128,13 @@ export default {
   .homeContainer
     width 100%
     height 100%
-    padding 10px 0
+    padding 5px 0
     box-sizing content-box
   .home-el-aside
     overflow hidden
-    border 1px solid #c6c6c6
-    border-radius 6px
+    Allborder()
     margin-left 6px
-    background #fff
+    background $background-color-White
 .homeCol
   height 100%
   width 100%
