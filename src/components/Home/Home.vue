@@ -98,7 +98,7 @@ export default {
   created() {
     // this.getLocation()
     console.log(this.$route.query)
-    this.token = '62c17e58-f81a-43b2-a6d6-77c0fd62ba55'
+    this.token = '45f19725-3141-4d44-a8e4-e93eebea4551'
     this.$store.commit('variable/setToken', this.token)
     sessionStorage.setItem('token', this.token)
     this.getInformation()
@@ -139,5 +139,5 @@ export default {
   height 100%
   width 100%
 .HomeElmain
-  padding-bottom 0
+  padding 10px 10px 0
 </style>

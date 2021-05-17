@@ -25,7 +25,11 @@ export default {
       myChart.setOption({
         title: {
           text: '仪表盘',
-          left: 'center'
+          left: 'center',
+          textStyle: {
+            fontSize: '14',
+            color: '#000000'
+          }
         },
         series: [
           {

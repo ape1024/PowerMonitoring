@@ -1,7 +1,6 @@
 <template>
   <el-row class="instrument">
     <el-col :span="24">
-      <!-- 仪表盘 -->
       <h4 class="instrumentHeader">
         表盘数据
         <i @click="close" class="instrumentHeaderclose"></i>

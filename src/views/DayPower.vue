@@ -26,7 +26,7 @@
         <div class="Condition-module_row">
           <div class="Condition-module_explain"></div>
           <div class="Condition-module_date">
-            <el-button size="small" type="primary">
+            <el-button @click="mimeograph" size="small" type="primary">
               <i class="el-icon-printer"></i>
               打印
             </el-button>
@@ -81,6 +81,7 @@
 </template>
 
 <script>
+import XLSX from 'xlsx';
 import Breadcrumb from '../components/public/Breadcrumb.vue'
 
 export default {
@@ -130,6 +131,20 @@ export default {
     this.drawLine()
   },
   methods: {
+    mimeograph() {
+      const heads = ['#1', '#2', '#3', '#4'];
+      const datas = [
+        ['4!', '3!', '2!', '1!'],
+        ['4!', '3!', '2!', '1!']
+      ];
+      const wb = XLSX.utils.book_new();
+      const ws = XLSX.utils.aoa_to_sheet([heads].concat(datas), {
+        cellDates: true
+      });
+      const name = '数据表';
+      XLSX.utils.book_append_sheet(wb, ws, name);
+      XLSX.writeFile(wb, `${name}.xlsx`);
+    },
     drawLine() {
       const myChart = this.$echarts.init(document.getElementById('LineChart'))
       myChart.setOption({

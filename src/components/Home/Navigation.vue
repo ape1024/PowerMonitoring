@@ -3,7 +3,7 @@
     <el-col :span="24" class="Navigation">
       <div class="navTitle">{{title}}</div>
       <div class="signOut">
-        <el-dropdown>
+        <el-dropdown trigger="click">
           <span class="el-dropdown-link">
             北工大
             <i class="el-icon-arrow-down el-icon--right"></i>
@@ -54,16 +54,21 @@ export default {
     font-size $font-size-Title
   .signOut
     color $font-color-white
-    line-height 60px
+    line-height 70px
     float right
+    font-size 22px
+    cursor pointer
     position relative
     overflow hidden
     .el-dropdown
       color $font-color-white
   .information
     color $font-color-white
-    font-size $font-size-large
+    font-size 22px
     position relative
-    margin 20px 40px 0 0
+    padding 0px 30px 0 30px
+    margin 20px 30px 0 0
     float right
+    border-right 1px solid #fff
+    border-left 1px solid #fff
 </style>
