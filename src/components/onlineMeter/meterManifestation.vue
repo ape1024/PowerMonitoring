@@ -1,7 +1,7 @@
 <template>
   <el-row class="meterManifestationElrow">
     <el-col :span="24" class="meterManifestationElcol">
-      <Breadcrumb />
+      <Breadcrumb :breadcrumbData="breadcrumbData" />
       <div class="meterManifestationSubject">
         <el-row :gutter="10">
           <el-col class="meterManifestationSubjectCol" :span="8">
@@ -607,6 +607,7 @@ export default {
   },
   data() {
     return {
+      breadcrumbData: '',
       getBack: '< 返回',
       coverSiwth: false,
       activities: [
@@ -730,6 +731,7 @@ export default {
     },
     tableClick() {
       this.coverSiwth = true
+      this.breadcrumbData = '在线表计'
     }
   },
   created() { }

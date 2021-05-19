@@ -2,7 +2,7 @@
   <el-row class="DayPowerElrow">
     <!-- 日用电量统计 -->
     <el-col :span="24">
-      <Breadcrumb />
+      <Breadcrumb :breadcrumbData="breadcrumbData" />
       <div class="ElectricityCondition">
         <div class="Condition-module_row">
           <div class="Condition-module_explain">测量位置:</div>
@@ -94,6 +94,7 @@ export default {
       value: '',
       value1: '',
       options: [],
+      breadcrumbData: '',
       tableData: [
         {
           date: '2016-05-02',
@@ -209,7 +210,9 @@ export default {
       })
     }
   },
-  created() { }
+  created() {
+    this.breadcrumbData = '日用电量统计'
+  }
 };
 </script>
 

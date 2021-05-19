@@ -2,7 +2,7 @@
   <el-row class="onlineElrow">
     <!-- 运行监视 —> 在线表计 -->
     <el-col :span="24">
-      <Breadcrumb />
+      <Breadcrumb :breadcrumbData="breadcrumbData" />
       <h4 class="OnlineMeterTitle">
         <img src="../assets/img/jiaohuanji.png" alt />
         在线表计监视
@@ -80,7 +80,9 @@ export default {
     Breadcrumb
   },
   data() {
-    return {};
+    return {
+      breadcrumbData: ''
+    };
   },
   computed: {},
   watch: {},
@@ -90,7 +92,9 @@ export default {
       this.$router.push('meterManifestation')
     }
   },
-  created() { }
+  created() {
+    this.breadcrumbData = '在线表计监视'
+  }
 };
 </script>
 

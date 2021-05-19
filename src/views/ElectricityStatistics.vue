@@ -2,7 +2,7 @@
   <el-row class="ElectricityStatisticsElrow">
     <!-- 数据分析 -> 电力统计 -->
     <el-col :span="24">
-      <Breadcrumb />
+      <Breadcrumb :breadcrumbData="breadcrumbData" />
       <div class="ElectricityCondition">
         <div class="Condition-module_row">
           <div class="Condition-module_explain">配电室:</div>
@@ -109,7 +109,8 @@ export default {
       radio: 1,
       pickerType: 'date',
       pieChartId: 'pieChartOne',
-      pieChartIdTwo: 'pieChartTwo'
+      pieChartIdTwo: 'pieChartTwo',
+      breadcrumbData: ''
     };
   },
   computed: {},
@@ -149,7 +150,9 @@ export default {
       })
     }
   },
-  created() { }
+  created() {
+    this.breadcrumbData = '电量统计分析'
+  }
 };
 </script>
 

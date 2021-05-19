@@ -2,7 +2,7 @@
   <el-row class="OperatingDataElrow">
     <!-- 运行监视 -> 运行数据 -->
     <el-col :span="24">
-      <Breadcrumb />
+      <Breadcrumb :breadcrumbData="breadcrumbData" />
       <div class="ElectricityCondition">
         <div class="Condition-module_row">
           <div class="Condition-module_explain">配电室:</div>
@@ -79,7 +79,8 @@ export default {
           g: '234324',
           h: '543535'
         }
-      ]
+      ],
+      breadcrumbData: ''
     };
   },
   computed: {},
@@ -100,7 +101,9 @@ export default {
       XLSX.writeFile(wb, `${name}.xlsx`);
     }
   },
-  created() { }
+  created() {
+    this.breadcrumbData = '运行数据监视'
+  }
 };
 </script>
 

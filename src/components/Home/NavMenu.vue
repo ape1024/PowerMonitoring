@@ -7,6 +7,7 @@
         :default-active="defaultActive"
         class="el-menu-vertical-demo"
         router
+        unique-opened="true"
         @select="handSelect"
         @open="handleOpen"
         @close="handleClose"

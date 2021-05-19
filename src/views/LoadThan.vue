@@ -2,7 +2,7 @@
   <el-row class="LoadThanElrow">
     <!-- 数据分析 -> 负荷时比 -->
     <el-col :span="24">
-      <Breadcrumb />
+      <Breadcrumb :breadcrumbData="breadcrumbData" />
       <div class="ElectricityCondition">
         <div class="Condition-module_row">
           <div class="Condition-module_explain">测量位置:</div>
@@ -60,7 +60,8 @@ export default {
     return {
       value: '',
       pickerValue: '',
-      options: []
+      options: [],
+      breadcrumbData: ''
     };
   },
   computed: {},
@@ -125,7 +126,9 @@ export default {
       })
     }
   },
-  created() { }
+  created() {
+    this.breadcrumbData = '负荷时比分析'
+  }
 };
 </script>
 

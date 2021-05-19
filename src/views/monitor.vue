@@ -2,7 +2,7 @@
   <el-row class="monitorElrow">
     <el-col :span="24" class="monitorElcol">
       <!-- 运行监视 -> 回路数据 -->
-      <Breadcrumb />
+      <Breadcrumb :breadcrumbData="breadcrumbData" />
       <div class="TabControlArea">
         <div class="TabControl">
           <TabControl />
@@ -31,13 +31,15 @@ export default {
   },
   data() {
     return {
-      tableData: []
+      tableData: [],
+      breadcrumbData: ''
     };
   },
   computed: {},
   watch: {},
   methods: {},
   created() {
+    this.breadcrumbData = '回路数据监视'
     this.tableData = [
 
       {

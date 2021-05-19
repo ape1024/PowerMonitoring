@@ -2,7 +2,7 @@
   <el-row class="AlarmEventsElrow">
     <!-- 报警事件 -->
     <el-col :span="24">
-      <Breadcrumb />
+      <Breadcrumb :breadcrumbData="breadcrumbData" />
       <div class="ElectricityCondition">
         <div class="Condition-module_row">
           <div class="Condition-module_explain">级别:</div>
@@ -123,6 +123,7 @@ export default {
       value: '',
       value1: '',
       options: [],
+      breadcrumbData: '',
       datetimerange: [],
       tableData: [
         {
@@ -150,7 +151,9 @@ export default {
   computed: {},
   watch: {},
   methods: {},
-  created() { }
+  created() {
+    this.breadcrumbData = '报警事件查询'
+  }
 };
 </script>
 

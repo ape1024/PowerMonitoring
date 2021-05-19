@@ -2,7 +2,7 @@
   <el-row class="ElectricityCustomElrow">
     <el-col :span="24">
       <!-- 电量定制 -->
-      <Breadcrumb />
+      <Breadcrumb :breadcrumbData="breadcrumbData" />
       <div class="TabControl">
         <TabControl />
       </div>
@@ -101,6 +101,7 @@ export default {
       datetimerange: [],
       pickerValue: '',
       pickerType: 'date',
+      breadcrumbData: '',
       conditionSwith: true,
       tableData: [
         {
@@ -170,7 +171,9 @@ export default {
     }
   },
   methods: {},
-  created() { }
+  created() {
+    this.breadcrumbData = '电量定制分析'
+  }
 };
 </script>
 

@@ -98,7 +98,7 @@ export default {
   created() {
     // this.getLocation()
     console.log(this.$route.query)
-    this.token = '45f19725-3141-4d44-a8e4-e93eebea4551'
+    this.token = '001d3a2c-1966-4395-bc7b-c2773a7a9a7b'
     this.$store.commit('variable/setToken', this.token)
     sessionStorage.setItem('token', this.token)
     this.getInformation()

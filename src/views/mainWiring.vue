@@ -2,7 +2,7 @@
   <el-row class="mainWiringElrow">
     <el-col :span="24" class="mainWiringElcol">
       <!-- 运行监视 -> 主接线图 -->
-      <Breadcrumb />
+      <Breadcrumb :breadcrumbData="breadcrumbData" />
       <div class="TabControl">
         <TabControl />
         <TabControl />
@@ -23,12 +23,16 @@ export default {
     TabControl
   },
   data() {
-    return {};
+    return {
+      breadcrumbData: ''
+    };
   },
   computed: {},
   watch: {},
   methods: {},
-  created() { }
+  created() {
+    this.breadcrumbData = '主接线图监视'
+  }
 };
 </script>
 

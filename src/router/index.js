@@ -42,7 +42,7 @@ const routes = [
         component: () => import('@/views/MainWiring')
       },
       {
-        //  运行监视 —> 在线表计
+        // 运行监视 —> 在线表计
         path: '/OnlineMeter',
         name: 'OnlineMeter',
         component: () => import('@/views/OnlineMeter')

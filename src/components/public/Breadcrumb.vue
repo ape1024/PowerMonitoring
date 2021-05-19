@@ -3,8 +3,8 @@
     <el-col :span="24">
       <!-- 页头 -->
       <el-breadcrumb separator-class="el-icon-arrow-right">
-        <el-breadcrumb-item>首页</el-breadcrumb-item>
-        <el-breadcrumb-item>活动管理</el-breadcrumb-item>
+        <el-breadcrumb-item>当前位置</el-breadcrumb-item>
+        <el-breadcrumb-item>{{breadcrumbData}}</el-breadcrumb-item>
       </el-breadcrumb>
     </el-col>
   </el-row>
@@ -13,6 +13,7 @@
 <script>
 export default {
   name: 'Breadcrumb',
+  props: ['breadcrumbData'],
   components: {},
   data() {
     return {};

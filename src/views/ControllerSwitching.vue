@@ -2,7 +2,7 @@
   <el-row class="controllerSwitchingElrow">
     <!-- 运行监视 -> 配电设备 -->
     <el-col :span="24">
-      <Breadcrumb />
+      <Breadcrumb :breadcrumbData="breadcrumbData" />
       <el-container class="cotrollerElcol">
         <el-aside class="controllerAside" width="250px">
           <el-tree :data="data" :props="defaultProps" @node-click="handleNodeClick">
@@ -57,6 +57,7 @@ export default {
   data() {
     return {
       coverSiwth: false,
+      breadcrumbData: '',
       data: [
         {
           label: '测试用户A区配',
@@ -149,7 +150,9 @@ export default {
       return 'text-align:center'
     }
   },
-  created() { }
+  created() {
+    this.breadcrumbData = '配电设备监视'
+  }
 };
 </script>
 

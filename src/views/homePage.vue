@@ -3,7 +3,7 @@
     <!-- 首  页 -->
     <el-col :span="24" class="homepageElcol">
       <!-- 页卡 -->
-      <Breadcrumb />
+      <Breadcrumb :breadcrumbData="breadcrumbData" />
       <!-- 基础信息 -->
       <el-row :gutter="20" class="InformationSubject">
         <el-col :span="6">
@@ -55,13 +55,15 @@ export default {
   data() {
     return {
       exhibitingData: {},
-      exhibitingMessage: {}
+      exhibitingMessage: {},
+      breadcrumbData: ''
     };
   },
   computed: {},
   watch: {},
   methods: {},
   created() {
+    this.breadcrumbData = '首页'
     this.exhibitingMessage = {
       title: '基本信息',
       icon: 'el-icon-document',
