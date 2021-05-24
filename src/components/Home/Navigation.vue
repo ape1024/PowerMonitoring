@@ -69,6 +69,6 @@ export default {
     padding 0px 30px 0 30px
     margin 20px 30px 0 0
     float right
-    border-right 1px solid #fff
-    border-left 1px solid #fff
+    border-right 1px solid $background-color-White
+    border-left 1px solid $background-color-White
 </style>

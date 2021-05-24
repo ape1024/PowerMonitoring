@@ -1,5 +1,4 @@
 /* eslint-disable no-shadow */
-/* eslint-disable linebreak-style */
 const state = {
   tokenData: window.sessionStorage.token ? window.sessionStorage.token : '',
   userName: window.sessionStorage.userName ? window.sessionStorage.userName : '',

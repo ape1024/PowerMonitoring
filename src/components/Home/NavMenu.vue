@@ -7,7 +7,7 @@
         :default-active="defaultActive"
         class="el-menu-vertical-demo"
         router
-        unique-opened="true"
+        :unique-opened="true"
         @select="handSelect"
         @open="handleOpen"
         @close="handleClose"
@@ -23,7 +23,6 @@
             </el-menu-item-group>
           </div>
         </el-submenu>-->
-
         <component
           class="menu-item"
           v-for="item in submenuData"

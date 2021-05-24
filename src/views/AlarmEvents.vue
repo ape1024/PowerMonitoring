@@ -58,7 +58,7 @@
         </div>
         <div class="Condition-module_row">
           <div class="Condition-module_explain">查询时间:</div>
-          <div class="Condition-module_content">
+          <div class="Condition-module_content_Time">
             <el-date-picker
               size="small"
               v-model="datetimerange"
@@ -170,7 +170,6 @@ export default {
   margin-top 6px
   Allborder()
 .Condition-module_row
-  min-width 200px
   display flex
   flex-direction row
   flex-flow row wrap
@@ -182,12 +181,16 @@ export default {
   color $font-color-main
   height 100%
 .Condition-module_content
-  min-width 150px
+  width 170px
+  align-items center
+  justify-content flex-start
+  display flex
+.Condition-module_content_Time
+  width 340px
   align-items center
   justify-content flex-start
   display flex
 .Condition-module_date
-  min-width 300px
   display flex
   flex-direction row
   flex-flow row wrap

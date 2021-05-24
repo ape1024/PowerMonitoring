@@ -148,7 +148,7 @@ export default {
   box-shadow 0 0 5px #bed1e1
   -moz-box-shadow 0 0 5px #bed1e1
   -webkit-box-shadow 0 0 5px #bed1e1
-  background-color #fff
+  background-color $background-color-White
   transition 0.2s
 .operation
   margin-top 10px

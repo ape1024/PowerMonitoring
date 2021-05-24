@@ -74,9 +74,6 @@ export default {
       const myChart = this.$echarts.init(document.getElementById('LoadThan'))
       myChart.setOption({
         backgroundColor: '#f2f2f2',
-        legend: {
-          data: ['高度与气温']
-        },
         tooltip: {
           trigger: 'axis',
           formatter: 'Temperature : <br/>{b} : {c}'

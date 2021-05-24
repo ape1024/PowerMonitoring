@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 const files = require.context('.', false, /\.js$/);
 const modules = {};
 files.keys().forEach((key) => {

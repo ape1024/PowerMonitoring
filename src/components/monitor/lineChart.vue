@@ -139,7 +139,7 @@ export default {
   position relative
   overflow hidden
   box-sizing border-box
-  background-color #fff
+  background-color $background-color-White
 .instrumentHeaderclose
   float right
   margin-right 4px

@@ -78,9 +78,7 @@ export default {
         if (txt.indexOf('.vue') === -1) {
           arr.push(txt)
         }
-        console.log(txt)
       })
-      console.log(arr)
       // powerweb
       try {
         arr.forEach(async (item) => {
@@ -98,7 +96,7 @@ export default {
   created() {
     // this.getLocation()
     console.log(this.$route.query)
-    this.token = '001d3a2c-1966-4395-bc7b-c2773a7a9a7b'
+    this.token = 'a9032911-b741-4782-8330-8a748b713921'
     this.$store.commit('variable/setToken', this.token)
     sessionStorage.setItem('token', this.token)
     this.getInformation()
@@ -107,7 +105,7 @@ export default {
   }
 }
 </script>
-<style lang="stylus">
+<style scoped lang="stylus">
 @import '../../assets/css/base.styl'
 .home
   height 100%

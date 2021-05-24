@@ -46,15 +46,10 @@ export default {
             type: 'pie',
             radius: '65%',
             label: {
-              normal: {
-                show: true,
-                textStyle: {
-                  fontWeight: 300,
-                  fontSize: 14
-                },
-                formatter: '{a}: {c} ({d}%)'
-
-              }
+              show: true,
+              fontWeight: 300,
+              fontSize: 14,
+              formatter: '{a}: {c} ({d}%)'
             },
             data: [
               {

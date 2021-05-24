@@ -32,7 +32,6 @@
           </el-table>
         </el-main>
       </el-container>
-
       <div v-if="coverSiwth" class="coverLayer">
         <div class="coverLayerDiv">
           <vue-drag-resize :isResizable="false">
@@ -142,7 +141,6 @@ export default {
     closeFn() {
       this.coverSiwth = false
     },
-    // eslint-disable-next-line consistent-return
     columnStyle({ columnIndex }) {
       if (columnIndex === 0) {
         return 'background:#d4eafb;text-align:center'
